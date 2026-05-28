@@ -33,8 +33,8 @@ class BPETokenizer:
 
     def __init__(self, vocab_size: int = 3000):
         self.vocab_size = vocab_size
-        self.id_to_token = {}
-        self.token_to_id = {}
+        self.id_to_token = {}   #key : 0~255    value : "<pad>", b"\x42" 
+        self.token_to_id = {}   #key : "<pad>", b"\x01"  value : 0~255
         self.merges = []
 
     def _init_special_tokens(self):
@@ -90,7 +90,30 @@ class BPETokenizer:
         - 새 token ID를 만들고, 시퀀스의 해당 pair를 새 ID로 치환합니다.
         - `self.merges`, `self.id_to_token`, `self.token_to_id`를 갱신합니다.
         """
-        raise NotImplementedError("BPETokenizer.train을 구현하세요.")
+        #raise NotImplementedError("BPETokenizer.train을 구현하세요.")
+        encoded = list(corpus.encode("utf-8"))
+        tokens = [byte_value + BYTE_OFFSET for byte_value in encoded]
+
+        pair_count = {}
+
+        for i in range(len(tokens)-1):
+            
+            for i in range(len(tokens)-2):
+                pair = (tokens[i], tokens[i+1])
+                if pair not in pair_count:
+                    pair_count[pair] = 0
+                
+                pair_count[pair] += 1
+
+            max_pair = max(pair_count, key = pair_count.get)
+
+            self.merges.append(pair)     
+            self.id_to_token[260 + i] = pair
+            self.token_to_id[pair] = 260 + i
+
+
+
+
 
     def save(self, path: str | Path):
         """
