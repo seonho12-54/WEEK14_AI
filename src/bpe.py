@@ -44,6 +44,20 @@ class BPETokenizer:
         2. byte 0~255를 ID 4~259에 bytes([byte_value]) 형태로 등록합니다.
         """
         #raise NotImplementedError("_init_special_tokens를 구현하세요.")
+        #위에 스페셜 토큰 넣는거 있는데 // 실제로 스페셜토큰 id가 0~3으로 정해져있음
+        #bytes([byte_value])는 튜플? 어떻게 생긴 거지? 생긴거를 안다면 0~3까지 등록할 수 있을 듯
+        #id_to_token, token_to_id 딕셔너리에 저장하라는 뜻
+        self.id_to_token[self.get_pad_id()] = PAD_TOKEN
+        self.token_to_id[PAD_TOKEN] = self.get_pad_id()
+
+        self.id_to_token[self.get_unk_id()] = UNK_TOKEN
+        self.token_to_id[UNK_TOKEN] = self.get_unk_id()
+
+        self.id_to_token[self.get_bos_id()] = BOS_TOKEN
+        self.token_to_id[BOS_TOKEN] = self.get_bos_id()
+
+        self.id_to_token[self.get_eos_id()] = EOS_TOKEN
+        self.token_to_id[EOS_TOKEN] = self.get_eos_id()
 
 
 
