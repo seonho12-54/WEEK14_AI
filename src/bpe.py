@@ -58,8 +58,11 @@ class BPETokenizer:
 
         self.id_to_token[self.get_eos_id()] = EOS_TOKEN
         self.token_to_id[EOS_TOKEN] = self.get_eos_id()
-
-
+        
+        #나머지 4~255번 id에 bytes([byte_value]) 등록
+        for i in range(0, NUM_BYTES):
+            self.token_to_id[bytes([i])] = i +BYTE_OFFSET
+            self.id_to_token[i + BYTE_OFFSET] = bytes([i])
 
     def get_pad_id(self):
         """padding 토큰 ID."""
