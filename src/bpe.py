@@ -78,39 +78,40 @@ class BPETokenizer:
         for i in range(len(lst)):
             lst2.append(lst[i] + BYTE_OFFSET)
 
+        while(len(self.id_to_token) < self.vocab_size):
+            # 2단계: 이웃한 pair 개수 세기
+            ID_token = {}
 
-        # 2단계: 이웃한 pair 개수 세기
-        ID_token = {}
+            
 
-        for i in range(len(lst2) - 1):
-            pair = (lst2[i], lst2[i + 1])
+            for i in range(len(lst2) - 1):
+                pair = (lst2[i], lst2[i + 1])
 
-            if pair in ID_token:
-                ID_token[pair] += 1
-            else:
-                ID_token[pair] = 1
+                if pair in ID_token:
+                    ID_token[pair] += 1
+                else:
+                    ID_token[pair] = 1
 
 
-        # 3단계: 제일 많이 나온 pair를 새 token으로 등록하기
-        best_pair = max(ID_token, key=ID_token.get)
-        new_id = len(self.id_to_token)
+            # 3단계: 제일 많이 나온 pair를 새 token으로 등록하기
+            best_pair = max(ID_token, key=ID_token.get)
+            new_id = len(self.id_to_token)
 
-        self.merges.append(best_pair)
-        self.id_to_token[new_id] = best_pair
-        self.token_to_id[best_pair] = new_id
+            self.merges.append(best_pair)
+            self.id_to_token[new_id] = best_pair
+            self.token_to_id[best_pair] = new_id
 
-        #4단계 lst2 안에 있는 페어중에 베스트 페어를 ID 값으로 치환하기
-        lst3 =[]
-        i= 0
-        while(i< len(lst2) - 1):
-          if ((i<len(lst2))&((lst2[i],lst2[i+1]) == best_pair)):
-            if (lst2[i],lst2[i+1]) == best_pair:
-              lst3.append(new_id)
-              i += 2
-          else:
-            lst3.append(lst2[i])
-            i += 1
-        lst2 = lst3
+            #4단계 lst2 안에 있는 페어중에 베스트 페어를 ID 값으로 치환하기
+            lst3 =[]
+            i= 0
+            while(i< len(lst2)):
+              if ((i<len(lst2) - 1 ) and ((lst2[i],lst2[i+1]) == best_pair)):
+                  lst3.append(new_id)
+                  i += 2
+              else:
+                lst3.append(lst2[i])
+                i += 1
+            lst2 = lst3
 
     def save(self, path: str | Path):
         """
