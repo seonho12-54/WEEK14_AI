@@ -103,7 +103,7 @@ class BPETokenizer:
         lst3 =[]
         i= 0
         while(i< len(lst2) - 1):
-          if (lst2[i+1]):
+          if ((i<len(lst2))&((lst2[i],lst2[i+1]) == best_pair)):
             if (lst2[i],lst2[i+1]) == best_pair:
               lst3.append(new_id)
               i += 2
