@@ -44,7 +44,6 @@ class BPETokenizer:
 
         self.token_to_id = {}
         self.id_to_token = {}
-        self.token_to_id.updates(SPECIAL_TOKENS)
 
         for i in range(4):
           self.token_to_id[SPECIAL_TOKENS[i]] = i
