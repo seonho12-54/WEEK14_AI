@@ -80,6 +80,10 @@ class BPETokenizer:
 
         while(len(self.id_to_token) < self.vocab_size):
             # 2단계: 이웃한 pair 개수 세기
+            
+            if (len(self.id_to_token) == None):
+              break
+
             ID_token = {}
 
             
