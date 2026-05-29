@@ -99,8 +99,17 @@ class BPETokenizer:
         self.id_to_token[new_id] = best_pair
         self.token_to_id[best_pair] = new_id
 
+        #4단계 lst2 안에 있는 페어중에 베스트 페어를 ID 값으로 치환하기
+        lst3 =[]
+        for i in range(len(lst2) - 1):
+          if (lst2[i],lst2[i+1]) == best_pair:
+            lst3[i] = new_id
+            ++i
+          else:
+            lst3[i] = lst2[i]
+            ++i
 
-        
+
     def save(self, path: str | Path):
         """
         TODO: vocabulary와 merge rule을 JSON 파일로 저장합니다.
