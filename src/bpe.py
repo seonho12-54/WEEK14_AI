@@ -183,6 +183,32 @@ class BPETokenizer:
         TODO: save()로 저장한 JSON 파일을 읽어 vocabulary와 merge rule을 복원합니다.
         """
         #raise NotImplementedError("BPETokenizer.load를 구현하세요.")
+        path = Path(path)
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        self.vocab_size = int(data["vocab_size"])
+
+        self.id_to_token = {}
+        self.token_to_id = {}
+        for item in data["id_to_token"]:
+            token_id = int(item["id"])
+            token_type = item["type"]
+            value = item["value"]
+
+            if token_type == "bytes":
+                token = bytes.fromhex(value)
+            else:
+                token = value
+
+            self.id_to_token[token_id] = token
+            self.token_to_id[token] = token_id
+
+        self.merges = []
+        for item in data["merges"]:
+            pair = tuple(item["pair"])
+            pair_id = int(item["new_id"])
+
+            self.merges.append((pair, pair_id))
 
 
 
@@ -195,7 +221,7 @@ class BPETokenizer:
         - train/load에서 얻은 merge rule을 학습 순서대로 적용합니다.
         - add_bos_eos=True이면 앞뒤에 bos/eos ID를 붙입니다.
         """
-        raise NotImplementedError("BPETokenizer.encode를 구현하세요.")
+        #raise NotImplementedError("BPETokenizer.encode를 구현하세요.")
 
     def decode(self, ids: list[int], skip_special: bool = True) -> str:
         """
