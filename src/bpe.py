@@ -8,7 +8,7 @@ UTF-8 byte-level BPE 토크나이저 과제 템플릿.
 """
 
 from pathlib import Path
-
+import json
 
 PAD_TOKEN = "<pad>"
 UNK_TOKEN = "<unk>"
@@ -143,13 +143,48 @@ class BPETokenizer:
 
         bytes와 tuple은 JSON에 바로 저장할 수 없으므로 type 정보를 함께 저장하세요.
         """
-        raise NotImplementedError("BPETokenizer.save를 구현하세요.")
+        #raise NotImplementedError("BPETokenizer.save를 구현하세요.")
+        path = Path(path)
+        #폴더가 없다면 생성하기
+        path.parent.mkdir(parents=True, exist_ok=True)
+        #id_to_token, merges를 저장해야함, byte타입을 어떻게 처리할지 >> .hex()
+        tokens_data = []
+        for key, value in self.id_to_token.items():
+            if isinstance(value, bytes):
+                tokens_data.append({
+                    "id" : key,
+                    "type" : bytes,
+                    "value" : value.hex()
+                })
+            else:
+                tokens_data.append({
+                    "id" : key,
+                    "type" : "str",
+                    "value" : value
+                })
+        
+        #merges의 튜플을 json에 넣기 위해 리스트 형태로 변환
+        merges_data = []
+        for merge in self.merges:
+            pair = list(merge[0])
+            new_id = merge[1]
+            merges_data.append({"pair" : pair, "new_id" : new_id,})
+        #json에 저장할 내용들
+        data = {
+            "vocab_size" : self.vocab_size,
+            "id_to_token" : tokens_data,
+            "merges" : merges_data
+        }
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
     def load(self, path: str | Path):
         """
         TODO: save()로 저장한 JSON 파일을 읽어 vocabulary와 merge rule을 복원합니다.
         """
-        raise NotImplementedError("BPETokenizer.load를 구현하세요.")
+        #raise NotImplementedError("BPETokenizer.load를 구현하세요.")
+
+
 
     def encode(self, text: str, add_bos_eos: bool = False) -> list[int]:
         """
