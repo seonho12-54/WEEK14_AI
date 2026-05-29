@@ -102,13 +102,15 @@ class BPETokenizer:
         #4단계 lst2 안에 있는 페어중에 베스트 페어를 ID 값으로 치환하기
         lst3 =[]
         i= 0
-        while(i< len(lst2)):
-          if (lst2[i],lst2[i+1]) == best_pair:
-            lst3.append(new_id)
-            i += 2
+        while(i< len(lst2) - 1):
+          if (lst2[i+1]):
+            if (lst2[i],lst2[i+1]) == best_pair:
+              lst3.append(new_id)
+              i += 2
           else:
             lst3.append(lst2[i])
             i += 1
+        lst2 = lst3
 
     def save(self, path: str | Path):
         """
