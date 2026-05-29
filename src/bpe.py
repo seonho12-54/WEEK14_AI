@@ -143,6 +143,18 @@ class BPETokenizer:
 
         bytes와 tuple은 JSON에 바로 저장할 수 없으므로 type 정보를 함께 저장하세요.
         """
+        path = Path(path)
+        
+        dic1 = {
+            
+        "vocab_size" : 0
+        "id_to_token" : 0
+        "merges" : 0
+        }
+        
+
+        
+        
         raise NotImplementedError("BPETokenizer.save를 구현하세요.")
 
     def load(self, path: str | Path):
