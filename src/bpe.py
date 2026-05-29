@@ -103,11 +103,11 @@ class BPETokenizer:
         lst3 =[]
         for i in range(len(lst2) - 1):
           if (lst2[i],lst2[i+1]) == best_pair:
-            lst3[i] = new_id
-            ++i
+            lst3.append(new_id)
+            i += 2
           else:
-            lst3[i] = lst2[i]
-            ++i
+            lst3.append(lst2[i])
+            i += 1 
 
 
     def save(self, path: str | Path):
