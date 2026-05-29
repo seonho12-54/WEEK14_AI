@@ -91,25 +91,47 @@ class BPETokenizer:
         - `self.merges`, `self.id_to_token`, `self.token_to_id`를 갱신합니다.
         """
         #raise NotImplementedError("BPETokenizer.train을 구현하세요.")
+        #corpus를 byte타입으로 변환하고, 리스트로 감싸서 정수 타입으로 변경
         encoded = list(corpus.encode("utf-8"))
+        #특수토큰4개를 고려해 4를 더한 값들로 변경
         tokens = [byte_value + BYTE_OFFSET for byte_value in encoded]
+        #vocab사이즈 만큼만 저장. 3000개
+        while len(self.id_to_token) < self.vocab_size:
+            pair_count = {}
 
-        pair_count = {}
-
-        for i in range(len(tokens)-1):
-            
-            for i in range(len(tokens)-2):
+            for i in range(len(tokens)-1):
                 pair = (tokens[i], tokens[i+1])
                 if pair not in pair_count:
                     pair_count[pair] = 0
                 
                 pair_count[pair] += 1
-
+            #더이상 merge할 pair가 없으면 종료
+            if not pair_count:
+                break
+            #최대 빈도 pair 선택
             max_pair = max(pair_count, key = pair_count.get)
+            #새 id 부여, byte타입으로 합치기
+            new_id = len(self.id_to_token)
+            left_token = self.id_to_token[max_pair[0]]
+            rignt_token = self.id_to_token[max_pair[1]]
+            new_token = left_token + rignt_token
+            #vocab에 등록
+            self.id_to_token[new_id] = new_token
+            self.token_to_id[new_token] = new_id
+            #merge 규칙 저장
+            self.merges.append((max_pair, new_id))
 
-            self.merges.append(pair)     
-            self.id_to_token[260 + i] = pair
-            self.token_to_id[pair] = 260 + i
+            #기존 tokens에 max_pair를 new_id로 치환하기 위한 새 리스트
+            new_tokens = []
+            i = 0
+            while i < len(tokens):
+                if i < len(tokens) - 1 and (tokens[i], tokens[i+1]) == max_pair:
+                    new_tokens.append(new_id)
+                    i+=2
+                else:
+                    new_tokens.append(tokens[i])
+                    i+=1
+            tokens = new_tokens
 
 
 
