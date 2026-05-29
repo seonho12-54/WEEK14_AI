@@ -262,3 +262,28 @@ class BPETokenizer:
         - byte를 하나씩 decode하지 말고, 마지막에 `bytes(...).decode("utf-8")`를 한 번만 호출합니다.
         """
         #raise NotImplementedError("BPETokenizer.decode를 구현하세요.")
+        #bytes타입으로 바꾼 token들을 모아둘 리스트
+        byte_tokens = []
+        #입력받은 ids리스트를 순회하면서 bytes로 변경해주기
+        for token_id in ids:
+            #token_id가 vocab에 없다면 <unk>로 대체하기
+            if token_id not in self.id_to_token:
+                byte_tokens.append(UNK_TOKEN.encode("utf-8"))
+                continue
+            
+            token = self.id_to_token[token_id]
+            #str 토큰은 특수 토큰, skip_special에 따라 건너뛰거나 bytes로 변환
+            if isinstance(token, str):
+                if skip_special:
+                    continue
+                else:
+                    byte_tokens.append(token.encode("utf-8"))
+                
+            else:
+                byte_tokens.append(token)
+        #decode 한 번에 할 수 있도록 합치기
+        merged = b"".join(byte_tokens)
+        #decode중 해석할 수 없는 byte가 있다면 대체 문자로 바꾸도록
+        text = merged.decode("utf-8", errors="replace")
+        return text
+        
