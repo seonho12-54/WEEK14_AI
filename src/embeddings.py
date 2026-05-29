@@ -27,7 +27,13 @@ class InputEmbedding(nn.Module):
         self.emb_dim = emb_dim
         self.context_length = context_length
         # TODO: token_embedding, position_embedding, dropout을 정의하세요.
-        raise NotImplementedError("InputEmbedding.__init__을 구현하세요.")
+        #raise NotImplementedError("InputEmbedding.__init__을 구현하세요.")
+        #nn.Embedding은 pytoch에 구현되어 있음, vocab 개수만큼의 토큰에 대해 emb_dim 차원 벡터 하나씩 준비
+        #token embedding은 nn.Embedding이 가진 token id별 학습 가능한 벡터, token id를 넣으면 해당 벡터가 출력
+        self.token_embedding = nn.Embedding(vocab_size, emb_dim)
+        #각 token 위치(0 ~ context_length-1)를 emb_dim 차원 위치 벡터로 변환하는 임베딩 층
+        self.position_embedding = nn.Embedding(context_length, emb_dim)
+        self.dropout = nn.Dropout(drop_rate)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
@@ -39,4 +45,12 @@ class InputEmbedding(nn.Module):
         Returns:
             (batch_size, seq_len, emb_dim)
         """
-        raise NotImplementedError("InputEmbedding.forward를 구현하세요.")
+        #raise NotImplementedError("InputEmbedding.forward를 구현하세요.")
+        token_emb = self.token_embedding(x)
+        batch_size, seq_len = x.shape
+        position_ids = torch.arange(seq_len)
+        position_emb = self.position_embedding(position_ids)
+        out = token_emb + position_emb
+        out = self.dropout(out)
+
+        return out
