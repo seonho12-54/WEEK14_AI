@@ -91,6 +91,7 @@ class BPETokenizer:
         - `self.merges`, `self.id_to_token`, `self.token_to_id`를 갱신합니다.
         """
         #raise NotImplementedError("BPETokenizer.train을 구현하세요.")
+        self._init_special_tokens()
         #corpus를 byte타입으로 변환하고, 리스트로 감싸서 정수 타입으로 변경
         encoded = list(corpus.encode("utf-8"))
         #특수토큰4개를 고려해 4를 더한 값들로 변경
@@ -153,7 +154,7 @@ class BPETokenizer:
             if isinstance(value, bytes):
                 tokens_data.append({
                     "id" : key,
-                    "type" : bytes,
+                    "type" : "bytes",
                     "value" : value.hex()
                 })
             else:
@@ -239,7 +240,7 @@ class BPETokenizer:
             new_token_ids = []
             i = 0
             while i < len(token_ids):
-                if i < len(token_ids) - 1 and (token_ids[i], token_ids[i+1] == pair):
+                if i < (len(token_ids) - 1) and (token_ids[i], token_ids[i+1]) == pair:
                     new_token_ids.append(new_id)
                     i += 2
                 
@@ -249,9 +250,11 @@ class BPETokenizer:
             
             token_ids = new_token_ids
 
-            #필요하다면 BOS, EOS도 추가
-            if add_bos_eos:
-                token_ids = [self.get_bos_id()] + token_ids + [self.get_eos_id()]
+        #필요하다면 BOS, EOS도 추가
+        if add_bos_eos:
+            token_ids = [self.get_bos_id()] + token_ids + [self.get_eos_id()]
+
+        return token_ids
 
     def decode(self, ids: list[int], skip_special: bool = True) -> str:
         """
