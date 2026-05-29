@@ -50,12 +50,12 @@ class BPETokenizer:
         for i in range(4):
           self.id_to_token[i] = SPECIAL_TOKENS[i]
         
-        BYTE_four = 4
         for i in range(NUM_BYTES):
-          self.id_to_token[BYTE_four]  = bytes([i])
-        
-        for i in range(NUM_BYTES):
-          self.token_to_id[i]  = bytes(i + BYTE_OFFSET)
+            token_id = i + BYTE_OFFSET
+            token = bytes([i])
+            
+            self.id_to_token[token_id] = token
+            self.token_to_id[token] = token_id
 
     def get_pad_id(self):
         """padding 토큰 ID."""
