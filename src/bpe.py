@@ -71,8 +71,36 @@ class BPETokenizer:
         - 새 token ID를 만들고, 시퀀스의 해당 pair를 새 ID로 치환합니다.
         - `self.merges`, `self.id_to_token`, `self.token_to_id`를 갱신합니다.
         """
-        raise NotImplementedError("BPETokenizer.train을 구현하세요.")
+        # 1단계: corpus를 UTF-8 byte로 바꾸고, byte token ID 리스트 만들기
+        lst = corpus.encode("utf-8")
 
+        lst2 = []
+        for i in range(len(lst)):
+            lst2.append(lst[i] + BYTE_OFFSET)
+
+
+        # 2단계: 이웃한 pair 개수 세기
+        ID_token = {}
+
+        for i in range(len(lst2) - 1):
+            pair = (lst2[i], lst2[i + 1])
+
+            if pair in ID_token:
+                ID_token[pair] += 1
+            else:
+                ID_token[pair] = 1
+
+
+        # 3단계: 제일 많이 나온 pair를 새 token으로 등록하기
+        best_pair = max(ID_token, key=ID_token.get)
+        new_id = len(self.id_to_token)
+
+        self.merges.append(best_pair)
+        self.id_to_token[new_id] = best_pair
+        self.token_to_id[best_pair] = new_id
+
+
+        
     def save(self, path: str | Path):
         """
         TODO: vocabulary와 merge rule을 JSON 파일로 저장합니다.
