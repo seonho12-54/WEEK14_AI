@@ -53,3 +53,19 @@ class MultiHeadAttention(nn.Module):
             return_attention_weights: True이면 attention weight도 함께 반환
         """
         #raise NotImplementedError("MultiHeadAttention.forward를 구현하세요.")
+        #q,k,v를 만들고, n_heads로 나누기
+        q = self.q_proj(x)
+        B, T, C = q.shape
+        q = q.view(B, T, self.n_heads, self.head_dim)
+        q = q.transpose(1,2)
+
+        k = self.k_proj(x)
+        k = k.view(B, T, self.n_heads, self.head_dim)
+        k = k.transpose(1,2)
+        
+        v = self.v_proj(x)
+        v = v.view(B, T, self.n_heads, self.head_dim)
+        v = v.transpose(1,2)
+
+        scores = q @ k.transpose(-2, -1)
+        scores = scores / (self.head_dim**0.5)
