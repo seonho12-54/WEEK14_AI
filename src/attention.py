@@ -31,7 +31,12 @@ class MultiHeadAttention(nn.Module):
         self.n_heads = n_heads
         self.head_dim = d_model // n_heads
         # TODO: qkv projection, output projection, dropout을 정의하세요.
-        raise NotImplementedError("MultiHeadAttention.__init__을 구현하세요.")
+        #raise NotImplementedError("MultiHeadAttention.__init__을 구현하세요.")
+        self.q_proj = nn.Linear(d_model, d_model, bias=qkv_bias)
+        self.k_proj = nn.Linear(d_model, d_model, bias=qkv_bias)
+        self.v_proj = nn.Linear(d_model, d_model, bias=qkv_bias)
+        self.out_proj = nn.Linear(d_model, d_model)
+        self.dropout = nn.Dropout(drop_rate)
 
     def forward(
         self,
@@ -47,4 +52,4 @@ class MultiHeadAttention(nn.Module):
             causal_mask: True이면 미래 위치를 볼 수 없게 mask 처리
             return_attention_weights: True이면 attention weight도 함께 반환
         """
-        raise NotImplementedError("MultiHeadAttention.forward를 구현하세요.")
+        #raise NotImplementedError("MultiHeadAttention.forward를 구현하세요.")
