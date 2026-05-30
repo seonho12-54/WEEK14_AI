@@ -8,7 +8,7 @@ UTF-8 byte-level BPE 토크나이저 과제 템플릿.
 """
 
 from pathlib import Path
-
+import json
 
 PAD_TOKEN = "<pad>"
 UNK_TOKEN = "<unk>"
@@ -144,18 +144,38 @@ class BPETokenizer:
         bytes와 tuple은 JSON에 바로 저장할 수 없으므로 type 정보를 함께 저장하세요.
         """
         path = Path(path)
-        
-        dic1 = {
-            
-        "vocab_size" : 0
-        "id_to_token" : 0
-        "merges" : 0
+
+        saved_id_to_token = {}
+        #토큰에 있는 다양한 형태를 조건별로 쪼개서 다시 리스트 형태로 새로운 딕셔너리에 입력
+        for token_id, token in self.id_to_token.items():
+            if isinstance(token, str):
+                saved_id_to_token[str(token_id)] = {
+                    "type": "str",
+                    "value": token,
+                }
+            elif isinstance(token, bytes):
+                saved_id_to_token[str(token_id)] = {
+                    "type": "bytes",
+                    "value": list(token),
+                }
+            elif isinstance(token, tuple):
+                saved_id_to_token[str(token_id)] = {
+                    "type": "tuple",
+                    "value": list(token),
+                }
+
+        saved_merge = [] #머지인데 여기서는 머지에 머지된것을 리스트화 시켜서 추가하는 역할
+        for pair in self.merges:
+            saved_merges.append(list(pair))
+
+        data = {
+                "vocab_size": self.vocab_size,
+                "id_to_token": saved_id_to_token, #JSON 으로 넣기 위해서 딕셔너리에 최종 입력
+                "merges": saved_merges,
         }
-        
 
         
-        
-        raise NotImplementedError("BPETokenizer.save를 구현하세요.")
+        path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8") # JSON 으로 코딩
 
     def load(self, path: str | Path):
         """
