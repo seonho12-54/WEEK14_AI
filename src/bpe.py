@@ -166,22 +166,51 @@ class BPETokenizer:
 
         saved_merge = [] #머지인데 여기서는 머지에 머지된것을 리스트화 시켜서 추가하는 역할
         for pair in self.merges:
-            saved_merges.append(list(pair))
+            saved_merge.append(list(pair))
 
         data = {
                 "vocab_size": self.vocab_size,
                 "id_to_token": saved_id_to_token, #JSON 으로 넣기 위해서 딕셔너리에 최종 입력
-                "merges": saved_merges,
+                "merges": saved_merge,
         }
 
         
         path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8") # JSON 으로 코딩
+        
 
     def load(self, path: str | Path):
         """
         TODO: save()로 저장한 JSON 파일을 읽어 vocabulary와 merge rule을 복원합니다.
         """
-        raise NotImplementedError("BPETokenizer.load를 구현하세요.")
+        path = Path(path)
+
+        self.id_to_token = {}
+        self.token_to_id = {}
+
+
+        data = json.loads(path.read_text(encoding="utf-8")) #JSOn 파일을 읽어오기
+        saved_id_to_token = data["id_to_token"]
+        
+        for token_id , saved_token in saved_id_to_token.items():
+
+            token_type = saved_token["type"]
+            value = saved_token["value"]
+            
+            if token_type == "str":
+                token = value
+            elif token_type == "bytes":
+                token = bytes(value)
+            elif token_type == "tuple":
+                token = tuple(value)
+                
+            self.id_to_token[int(token_id)] = token
+            self.token_to_id[token] = int(token_id)
+
+            self.merges = []
+
+            for pair in data["merges"]:
+                self.merges.append(tuple(pair))
+                
 
     def encode(self, text: str, add_bos_eos: bool = False) -> list[int]:
         """
