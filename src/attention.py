@@ -68,4 +68,24 @@ class MultiHeadAttention(nn.Module):
         v = v.transpose(1,2)
 
         scores = q @ k.transpose(-2, -1)
+        #score가 너무 커지는걸 방지하기 위해, softmax가 한쪽으로 쏠릴 수 있음
         scores = scores / (self.head_dim**0.5)
+        #casual mask 생성, scores에 적용하여 미래토큰 참조 방지
+        mask = torch.triu(torch.ones(T, T, device = x.device), diagonal = 1).bool()
+        scores = scores.masked_fill(mask, float("-inf"))
+
+        #attention_scores에 softmax를 적용하여 weights생성, dropout적용
+        attention_weights = torch.softmax(scores, dim=-1)
+        attention_weights = self.dropout(attention_weights)
+        #context vector 생성
+        context = attention_weights @ v
+        #context head합치기
+        context = context.transpose(1, 2)
+        context = context.contiguous().view(B, T, self.d_model)
+        #out_proj를 통과시켜서 출력
+        out = self.out_proj(context)
+
+        if return_attention_weights:
+            return out, attention_weights
+        
+        return out
