@@ -127,7 +127,7 @@ class ReviewSentimentDataset(Dataset):
             input_ids = input_ids[:self.max_length]
         #짧다면 나머지 부분 pad_id로 채우기
         else:
-            pad_len = self.max_length - len(input_ids)
+            self.pad_len = self.max_length - len(input_ids)
             input_ids = input_ids + [self.pad_id]*self.pad_len
         #torch.long tensor로 변환
         input_ids = torch.tensor(input_ids, dtype=torch.long)
@@ -177,7 +177,7 @@ class GPTForSequenceClassification(nn.Module):
         """
         #raise NotImplementedError("GPTForSequenceClassification.forward를 구현하세요.")
         #token id -> token_embedding + position_embedding
-        x = self.gpt.embedding(input_ids)''
+        x = self.gpt.embedding(input_ids)
         #TransformerBlock 통과
         x = self.gpt.blocks(x)
         #최종 정규화 진행
