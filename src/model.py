@@ -201,4 +201,21 @@ def generate_text_simple(
     context_size: int,
 ) -> torch.Tensor:
     """TODO: greedy 방식으로 max_new_tokens만큼 다음 토큰을 이어 붙입니다."""
-    raise NotImplementedError("generate_text_simple을 구현하세요.")
+    #raise NotImplementedError("generate_text_simple을 구현하세요.")
+
+    for _ in range(max_new_tokens):
+        #현재 token이 너무 길면 마지막 context_size개의 토큰만 모델에 넣음
+        idx_cond = idx[:, -context_size :]
+
+        with torch.no_grad():
+            #model이 각 위치마다 다음 token점수를 계산
+            logits = model(idx_cond)
+        #(B,T,vocab_size)에서 마지막 토큰만 보겠다는 뜻, shape : (B, vocab_size)
+        last_logits = logits[:,-1,:]
+        #(B,vocab_size)에서 마지막 차원, 즉 vocab에 대해 argmax를 해라
+        next_id = torch.argmax(last_logits, dim=-1, keepdim=True)
+        #고른 token_id를 기존 sequence 뒤에 붙임
+        #torch.cat : 여러 텐서를 한 방향으로 이어 붙임, 이어붙일 텐서들을 튜플로 묶어서 넘김
+        idx = torch.cat((idx, next_id), dim=1)
+
+    return idx
