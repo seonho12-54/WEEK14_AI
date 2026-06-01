@@ -151,7 +151,19 @@ class GPTForSequenceClassification(nn.Module):
         self.gpt = gpt_model
         self.num_labels = num_labels
         # TODO: dropout과 classifier를 정의하세요. classifier 입력 차원은 gpt_model.config["emb_dim"]입니다.
-        raise NotImplementedError("GPTForSequenceClassification.__init__을 구현하세요.")
+        #raise NotImplementedError("GPTForSequenceClassification.__init__을 구현하세요.")
+        #classifier : GPT가 만든 문장벡터를 긍정/부정같은 label점수로 바꾸는 마지막 Linear layer
+        super().__init__()
+        #기존 gpt모델을 backbone으로 들고있음
+        self.gpt = gpt_model
+        self.num_labels = num_labels
+
+        emb_dim = gpt_model.config["emb_dim"]
+
+        self.dropout = nn.Dropout(drop_rate)
+        #gpt가 만든 문장 대표 벡터를 긍정/부정 점수로 바꾸는 새 layer
+        self.classifier = nn.Linear(emb_dim, num_labels)
+
 
     def forward(
         self,
@@ -163,9 +175,31 @@ class GPTForSequenceClassification(nn.Module):
 
         labels가 있으면 (loss, logits), 없으면 logits를 반환합니다.
         """
-        raise NotImplementedError("GPTForSequenceClassification.forward를 구현하세요.")
+        #raise NotImplementedError("GPTForSequenceClassification.forward를 구현하세요.")
+        #token id -> token_embedding + position_embedding
+        x = self.gpt.embedding(input_ids)''
+        #TransformerBlock 통과
+        x = self.gpt.blocks(x)
+        #최종 정규화 진행
+        x = self.gpt.final_norm(x)
+        #마지막 벡터는 transformer를 통과하며 앞 토큰의 문맥을 attention으로 반영한 벡터
+        #문장을 대표하는 벡터라 할 수 있음. (단, 패딩으로만 이루어진 토큰은 아닌지 주의)
+        #엄밀히 말하면 마지막 token위치의 context-aware hidden vector
+        sentence_vec = x[:, -1, :]
+        #dropout으로 과적합 방지
+        sentence_vec = self.dropout(sentence_vec)
+        #문장 대표 벡터를 긍정/부정 점수로 변환
+        logits = self.classifier(sentence_vec)
+        #정답이 없다면 예측 점수만 반환 (추론/테스트 용도)
+        if labels is None:
+            return logits
+        #logits과 label을 비교해서 loss계산
+        loss = torch.nn.functional.cross_entropy(logits, labels)
 
+        return loss, logits
 
+#감성 분류 모델을 train_loader 전체에 대해 1epoch 학습시키는 함수
+#1epoch에서 각 배치마다 평균 loss, 정답 횟수를 누적하여 전체 평균loss, 정답률 반환
 def train_epoch_sentiment(
     model: GPTForSequenceClassification,
     train_loader,
@@ -173,13 +207,70 @@ def train_epoch_sentiment(
     device: torch.device,
 ) -> tuple[float, float]:
     """TODO: 감성 분류 모델을 1 epoch 훈련하고 (평균 loss, accuracy)를 반환합니다."""
-    raise NotImplementedError("train_epoch_sentiment를 구현하세요.")
+    #raise NotImplementedError("train_epoch_sentiment를 구현하세요.")
+    #train모드(dropout 켜짐)
+    model.train()
+    #epoch 전체 평균 loss와 accuracy를 계산하기 위한 누적 변수
+    total_loss = 0.0
+    correct = 0
+    total = 0
+    #train_loader : ReviewSentimentDataset에서 나온 리뷰 token id tensor, 정답 label이 batch단위로 묶여있음
+    for input_ids, labels in train_loader:
+        #입력과 정답을 CPU/GPU 같은 계산 장치로 옮김
+        input_ids = input_ids.to(device)
+        labels = labels.to(device)
+        #이전 batch에서 남아있던 gradient 초기화
+        optimizer.zero_grad()
+        #모델에 입력과 정답을 넣고 loss, logits 반환
+        loss, logits = model(input_ids, labels)
+        #loss를 줄이기 위한 gradient 계산
+        loss.backward()
+        #계산된 gradient를 이용하여 파라미터 업데이트
+        optimizer.step()
+        #현재 batch의 평균 loss에 batch크기를 곱해 누적
+        total_loss += loss.item()  * input_ids.size(0)
+        #긍정/부정 점수 중 더 큰 쪽을 예측 label로 선택
+        preds = torch.argmax(logits, dim=-1)
+        #예측과 정답이 같은 개수를 누적
+        correct += (preds == labels).sum().item()
+        #지금까지 본 전체 샘플 개수를 누적
+        total += labels.size(0)
+    #전체 평균 loss와 정확도를 계산
+    avg_loss = total_loss / total
+    accuracy = correct / total
+    #한 epoch 학습 결과를 반환
+    return avg_loss, accuracy
 
-
+#현재 감성모델에 대한 평균 loss와 정확도를 계산하여 평가만 하는 함수
 def evaluate_sentiment(
     model: GPTForSequenceClassification,
     data_loader,
     device: torch.device,
 ) -> tuple[float, float]:
     """TODO: 감성 분류 모델을 평가하고 (평균 loss, accuracy)를 반환합니다."""
-    raise NotImplementedError("evaluate_sentiment를 구현하세요.")
+    #raise NotImplementedError("evaluate_sentiment를 구현하세요.")
+    #평가모드 (dropout꺼짐)
+    model.eval()
+    #모델 전체 평균과 정확도 계산을 위한 누적변수
+    total_loss = 0.0
+    correct = 0
+    total = 0
+    #평가모드라 gradient 계산x
+    with torch.no_grad():
+        #Dataloader 에서 batch단위로 입력과 정답을 꺼냄
+        for input_ids, labels in data_loader:
+            input_ids = input_ids.to(device)
+            labels = labels.to(device)
+
+            loss, logits = model(input_ids, labels)
+
+            total_loss += loss.item() * input_ids.size(0)
+
+            preds = torch.argmax(logits, dim=-1)
+            correct += (preds == labels).sum().item()
+            total += labels.size(0)
+
+    avg_loss = total_loss / total
+    accuracy = correct / total
+
+    return avg_loss, accuracy
