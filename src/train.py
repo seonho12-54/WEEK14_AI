@@ -109,7 +109,42 @@ def generate(
     eos_id: int | None = None,
 ) -> torch.Tensor:
     """TODO: temperature와 top-k 샘플링을 지원하는 생성 함수를 구현합니다."""
-    raise NotImplementedError("generate를 구현하세요.")
+    #raise NotImplementedError("generate를 구현하세요.")
+    #max_new_tokens : 현재 입력 token 뒤에 새로 생성해서 붙일 token의 최대 개수
+    for _ in range(max_new_tokens):
+        #현재 idx에서 마지막 context_size개만 잘라 모델에 넣음
+        idx_cond = idx[:, -context_size:]
+        #생성할 때는 학습을 하지 않기에 grad를 잠깐 끄고 logits 구함
+        with torch.no_grad():
+            logits = model(idx_cond)
+        #마지막 위치의 logits만 꺼냄
+        logits = logits[:, -1, :]
+        #top_k가 있다면 상위 k개 후보만 남김
+        if top_k is not None:
+            top_logits, _ = torch.topk(logits, top_k)
+            min_val = top_logits[:, -1].unsqueeze(-1)
+            logits = torch.where(
+                logits < min_val,
+                torch.tensor(float("-inf"), device=logits.device),
+                logits,
+            )
+        #temperature가 음수면 의미가 없으므로 오류처리(잘못된 입력)
+        if temperature < 0:
+            raise ValueError("temperature must be non-negative")
+        #temperature가 0이면 argmax로 greedy선택, 0보다 크면 softmax 후 확률적으로 sampling
+        elif temperature == 0.0:
+            idx_next = torch.argmax(logits, dim=-1, keepdim=True)
+        else:
+            logits = logits / temperature
+            probs = torch.softmax(logits, dim=-1)
+            idx_next = torch.multinomial(probs, num_samples=1)
+
+        idx = torch.cat((idx, idx_next), dim=1)
+        #eos_id가 설정되어 있고, 방금 생성한 토큰이 모든 배치에서 <eos>라면 생성을 멈춤
+        if eos_id is not None and (idx_next == eos_id).all():
+            break
+    
+    return idx
 
 
 def generate_and_print_sample(
