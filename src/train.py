@@ -146,7 +146,7 @@ def generate(
     
     return idx
 
-
+#생성 결과를 볼 수 있게 시작문장->tokenizer.encode->generate->tokenizer.decode->print
 def generate_and_print_sample(
     model: GPTModel,
     tokenizer,
@@ -158,8 +158,28 @@ def generate_and_print_sample(
     top_k: int | None = 40,
 ) -> None:
     """TODO: start_context를 encode하고 generate 후 decode하여 출력합니다."""
-    raise NotImplementedError("generate_and_print_sample을 구현하세요.")
+    #raise NotImplementedError("generate_and_print_sample을 구현하세요.")
+    #생성이므로 학습x
+    model.eval()
+    #encode후 tensor로 변환
+    encoded = tokenizer.encode(start_context, add_bos_eos=False)
+    idx = torch.tensor(encoded, dtype=torch.long, device=device).unsqueeze(0)
+    #out : generate가 반환한 생성 완료 token id 텐서, 기존 입력 token id에 생성된  token를 붙인 전체 token id 묶음
+    out = generate(
+        model=model,
+        idx=idx,
+        max_new_tokens=max_new_tokens,
+        context_size=context_size,
+        temperature=temperature,
+        top_k=top_k,
+        eos_id=tokenizer.get_eos_id(),
+    )
+    #확인 용도로 사용하는 것이라 보통 문장 하나만 넣어서 batch_size가 1임
+    decoded_text = tokenizer.decode(out[0].tolist())
 
+    print(decoded_text)
+
+    model.train()
 
 def train_model(
     model: GPTModel,
@@ -177,7 +197,7 @@ def train_model(
     global_step: int = 0,
 ) -> list[float]:
     """TODO: 사전 학습 루프를 구현하고 epoch별 train loss 리스트를 반환합니다."""
-    raise NotImplementedError("train_model을 구현하세요.")
+    #raise NotImplementedError("train_model을 구현하세요.")
 
 
 def plot_losses(train_losses: list[float], val_losses: list[float] | None = None) -> None:
