@@ -129,7 +129,39 @@ class GPTModel(nn.Module):
         super().__init__()
         self.config = config #모델을 만들 때 필요한 설정값들을 모아둔 딕셔너리
         # TODO: embedding, blocks, final layernorm, lm_head를 정의하세요.
-        raise NotImplementedError("GPTModel.__init__을 구현하세요.")
+        #raise NotImplementedError("GPTModel.__init__을 구현하세요.")
+        #config는 테스트나 트레이닝 같은 곳에서 생성 후, model = GPTmodel(config) 이런 식으로 사용
+        vocab_size = config["vocab_size"]
+        context_length = config["context_length"]
+        emb_dim = config["emb_dim"]
+        n_heads = config["n_heads"]
+        n_layers = config["n_layers"]
+        drop_rate = config["drop_rate"]
+        qkv_bias = config.get("qkv_bias", False)
+        #token id를 token_embedding + position_embedding으로 변환
+        self.embedding = InputEmbedding(
+            vocab_size=vocab_size,
+            emb_dim=emb_dim,
+            context_length=context_length,
+            drop_rate=drop_rate,
+        )
+        #TransformerBlock 여러 개를 순서대로 통과시킴
+        self.blocks = nn.Sequential(
+            #n_layers개수 만큼 transformerblock을 만들고, 각각의 블럭에 아래 변수를 넣어줌
+            *[
+                TransformerBlock(
+                    d_model=emb_dim,
+                    n_heads=n_heads,
+                    drop_rate=drop_rate,
+                    qkv_bias=qkv_bias,
+                )
+                for _ in range(n_layers)
+            ]
+        )
+        #마지막 출력 벡터를 한 번 더 안정화, transformer block 여러층을 지나면서 값의 분포가 흔들릴 수도 있음
+        self.final_norm = LayerNorm(emb_dim)
+        #각 token벡터를 다음번에 올 token점수 벡터로 변환, (vocab_size 차원 벡터임), logits를 만듦
+        self.lm_head = nn.Linear(emb_dim, vocab_size, bias=False)
 
     def forward(
         self,
@@ -143,9 +175,25 @@ class GPTModel(nn.Module):
             targets가 None이면 logits
             targets가 있으면 (loss, logits)
         """
-        raise NotImplementedError("GPTModel.forward를 구현하세요.")
+        #raise NotImplementedError("GPTModel.forward를 구현하세요.")
+        #embedding, blocks, final_norm, lm_head 순서대로
+        x = self.embedding(idx)
+        x = self.blocks(x)
+        x = self.final_norm(x)
+        logits = self.lm_head(x)
 
+        #targets는 forward가 호출할 때마다 외부에서 들어옴, 객체가 계속 기억할 필요가 없음 self.가 아님
+        if targets is None:
+            return logits
+        #tatgers이 있다면 loss계산
+        loss = F.cross_entropy(
+            #(B, T, vocab_size)를 (B*T, vocab_size)로 바꿈
+            logits.reshape(-1, logits.size(-1)),
+            targets.reshape(-1),
+        )
 
+        return loss, logits
+        
 def generate_text_simple(
     model: GPTModel,
     idx: torch.Tensor,
