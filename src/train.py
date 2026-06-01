@@ -67,8 +67,16 @@ def save_checkpoint(
     path: str,
 ) -> None:
     """TODO: model/optimizer 상태, epoch, global_step을 torch.save로 저장합니다."""
-    raise NotImplementedError("save_checkpoint를 구현하세요.")
+    #raise NotImplementedError("save_checkpoint를 구현하세요.")
+    #모델의 학습된 파라미터, optimizer 내부 상태, 몇번째 epoch까지 했는지, 전체 배치 update가 몇번인지 저장
+    checkpoint = {
+        "model_state_dict" : model.state_dict(),
+        "optimizer_state_dict" : optimizer.state_dict(),
+        "epoch" : epoch,
+        "global_step" : global_step,
+    }
 
+    torch.save(checkpoint, path)
 
 def load_checkpoint(
     model: GPTModel,
@@ -77,8 +85,19 @@ def load_checkpoint(
     device: torch.device,
 ) -> tuple[int, int]:
     """TODO: torch.load로 checkpoint를 읽어 model/optimizer 상태를 복원합니다."""
-    raise NotImplementedError("load_checkpoint를 구현하세요.")
+    #raise NotImplementedError("load_checkpoint를 구현하세요.")
+    #저장했던 checkpoint파일을 읽어옴,map_location=device : 저장 당시 gpu였더라도 현재 cpu/gpu환경에 맞게 불러옴
+    checkpoint = torch.load(path, map_location=device)
+    #저장했던 모델 파라미터를 현재 모델에 다시 넣음
+    model.load_state_dict(checkpoint["model_state_dict"])
+    #optimizer 상태 복원, 생성만 할 때는 optimizer가 필요없어서 none 조건문으로
+    if optimizer is not None:
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+    #어디까지 학습했는지 불러와서 반환
+    epoch = checkpoint["epoch"]
+    global_step = checkpoint["global_step"]
 
+    return epoch, global_step
 
 def generate(
     model: GPTModel,
