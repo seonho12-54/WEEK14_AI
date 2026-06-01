@@ -153,23 +153,44 @@ class BPETokenizer:
         for key, value in self.id_to_token.items():
             if isinstance(value, bytes):
                 tokens_data.append({
-                    "id" : key,
-                    "type" : "bytes",
-                    "value" : value.hex()
+                    "id": key,
+                    "type": "bytes",
+                    "value": value.hex(),
+                })
+            elif isinstance(value, tuple):
+                tokens_data.append({
+                    "id": key,
+                    "type": "tuple",
+                    "value": list(value),
                 })
             else:
                 tokens_data.append({
-                    "id" : key,
-                    "type" : "str",
-                    "value" : value
-                })
-        
+                    "id": key,
+                    "type": "str",
+                    "value": value,
+                })        
         #merges의 튜플을 json에 넣기 위해 리스트 형태로 변환
         merges_data = []
         for merge in self.merges:
-            pair = list(merge[0])
-            new_id = merge[1]
-            merges_data.append({"pair" : pair, "new_id" : new_id,})
+            if (
+                len(merge) == 2
+                and isinstance(merge[0], tuple)
+                and isinstance(merge[1], int)
+            ):
+                pair = list(merge[0])
+                new_id = merge[1]
+                merge_type = "pair_new_id"
+            #merge에 튜플만 들어갈 경우
+            else:
+                pair = list(merge)
+                new_id = self.token_to_id.get(tuple(merge))
+                merge_type = "pair_only"
+
+            merges_data.append({
+                "type": merge_type,
+                "pair": pair,
+                "new_id": new_id,
+            })        
         #json에 저장할 내용들
         data = {
             "vocab_size" : self.vocab_size,
@@ -200,6 +221,8 @@ class BPETokenizer:
 
             if token_type == "bytes":
                 token = bytes.fromhex(value)
+            elif token_type == "tuple":
+                token = tuple(value)
             else:
                 token = value
 
@@ -209,11 +232,13 @@ class BPETokenizer:
         self.merges = []
         for item in data["merges"]:
             pair = tuple(item["pair"])
-            pair_id = int(item["new_id"])
+            merge_type = item.get("type", "pair_only")
+            new_id = item.get("new_id")
 
-            self.merges.append((pair, pair_id))
-
-
+            if merge_type == "pair_new_id":
+                self.merges.append((pair, int(new_id)))
+            else:
+                self.merges.append(pair)
 
     def encode(self, text: str, add_bos_eos: bool = False) -> list[int]:
         """

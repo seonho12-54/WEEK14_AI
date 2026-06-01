@@ -26,7 +26,7 @@ class GPTDataset(Dataset):
         # TODO: 만들 수 있는 학습 샘플 개수를 self._length에 저장하세요.
         #raise NotImplementedError("GPTDataset.__init__에서 self._length를 구현하세요.")
         #window를 몇 개 만들어야할지 계산
-        self._length = 1 + (len(token_ids) - self.context_length) // self.stride  
+        self._length = 1 + (len(token_ids) - self.context_length - 1) // self.stride  
 
 
     def __len__(self) -> int:

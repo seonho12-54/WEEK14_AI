@@ -69,7 +69,7 @@ class FeedForward(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """TODO: FeedForward 네트워크를 통과시킵니다."""
         #raise NotImplementedError("FeedForward.forward를 구현하세요.")
-        return self.net
+        return self.net(x)
 
 class TransformerBlock(nn.Module):
     """
@@ -186,7 +186,7 @@ class GPTModel(nn.Module):
         if targets is None:
             return logits
         #tatgers이 있다면 loss계산
-        loss = F.cross_entropy(
+        loss = torch.nn.functional.cross_entropy(
             #(B, T, vocab_size)를 (B*T, vocab_size)로 바꿈
             logits.reshape(-1, logits.size(-1)),
             targets.reshape(-1),
