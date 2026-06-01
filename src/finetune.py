@@ -6,12 +6,41 @@ from pathlib import Path
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset
+import csv
+import json
+import random
 
 try:
     from .model import GPTModel
 except ImportError:
     from model import GPTModel
 
+#헬퍼함수
+def _read_sentiment_tsv(path: str | Path) -> list[dict]:
+    rows = []
+
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+
+        for row in reader:
+            text = row.get("document", "")
+            label = row.get("label", "")
+
+            if text is None:
+                continue
+            
+            text = text.strip()
+
+            if not text:
+                continue
+            if label not in {"0", "1"}:
+                continue
+
+            rows.append({
+                "text": text,
+                "label": int(label),
+            })
+    return rows
 
 def make_sentiment_dataset(
     train_tsv_path: str | Path,
@@ -26,8 +55,36 @@ def make_sentiment_dataset(
     반환 형식:
         [{"text": "리뷰", "label": 0 또는 1}, ...]
     """
-    raise NotImplementedError("make_sentiment_dataset을 구현하세요.")
+    #raise NotImplementedError("make_sentiment_dataset을 구현하세요.")
 
+    train_rows = _read_sentiment_tsv(train_tsv_path)
+
+    rng = random.Random(seed)
+    rng.shuffle(train_rows)
+
+    val_size = max(1, int(len(train_rows) * val_ratio))
+    val_data = train_rows[:val_size]
+    train_data = train_rows[val_size:]
+
+    test_data = _read_sentiment_tsv(test_tsv_path) if test_tsv_path in not None else []
+
+    if output_dir is not None:
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        with open(output_dir / "nsmc_sentiment_train.jsonl", "w", encoding="utf-8") as f:
+            for row in train_data:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+        with open(output_dir / "nsmc_sentiment_val.jsonl", "w", encoding="utf-8") as f:
+            for row in val_data:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+        with open(output_dir / "nsmc_sentiment_test.jsonl", "w", encoding="utf-8") as f:
+            for row in test_data:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    
+    return train_data, val_data, test_data
 
 class ReviewSentimentDataset(Dataset):
     """감성 분류용 Dataset. 리뷰 하나와 label 하나를 반환합니다."""
