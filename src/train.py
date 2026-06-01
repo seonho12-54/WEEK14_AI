@@ -199,6 +199,75 @@ def train_model(
     """TODO: 사전 학습 루프를 구현하고 epoch별 train loss 리스트를 반환합니다."""
     #raise NotImplementedError("train_model을 구현하세요.")
 
+    model.to(device)
+
+    train_losses = []
+    #각 epoch마다 반복
+    for epoch in range(start_epoch, num_epochs):
+        model.train()
+
+        total_loss = 0.0
+        num_batches = 0
+        #각 batch마다 반복
+        for input_batch, target_batch in train_loader:
+            #기존 gradient 초기화
+            optimizer.zero_grad()
+
+            loss = calc_loss_batch(input_batch, target_batch, model, device)
+            loss.backward()
+            optimizer.step()
+
+            total_loss += loss.item()
+            num_batches += 1
+            global_step += 1
+            #global_step이 eval_freq의 배수가 될 때, eval_freq번 마다 평가
+            if eval_freq is not None and global_step % eval_freq == 0:
+                #학습 데이터에 대해 얼마나 틀렸는지 평균 손실 계산
+                train_loss = calc_loss_loader(
+                    train_loader,
+                    model,
+                    device,
+                    num_batches=eval_iter,
+                )
+                #검증 데이터에 대해 얼마나 틀렸는지 평균 손실 계산
+                val_loss = calc_loss_loader(
+                    val_loader,
+                    model,
+                    device,
+                    num_batches=eval_iter,
+                )
+
+                print(
+                    f"Epoch {epoch + 1},"
+                    f"Step {global_step},"
+                    f"Train loss {train_loss:.4f}",
+                    f"Val loss {val_loss:.4f}"
+                )
+            #ckpt_freq : 몇 global_step마다 checkpoint를 남길지
+            if ckpt_freq is not None and global_step % ckpt_freq == 0:
+                save_checkpoint(
+                    model=model,
+                    optimizer=optimizer,
+                    epoch=epoch,
+                    global_step=global_step,
+                    path=f"checkpoint_step_{global_step}.pt",
+                )
+        #한 epoch의 평균 loss구하기
+        epoch_loss = total_loss / num_batches
+        #epoch별 평균 loss 기록 저장용, 그래프에 사용
+        train_losses.append(epoch_loss)
+
+        print(f"Epoch {epoch + 1} average loss: {epoch_loss:.4f}")
+
+        generate_and_print_sample(
+            model=model,
+            tokenizer=tokenizer,
+            device=device,
+            start_context=start_context,
+            context_size=model.config["context_length"],
+        )
+    
+    return train_losses
 
 def plot_losses(train_losses: list[float], val_losses: list[float] | None = None) -> None:
     """훈련/검증 손실 그래프를 그리는 제공 함수."""
