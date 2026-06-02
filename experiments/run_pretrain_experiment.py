@@ -53,7 +53,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--log-every", type=int, default=10)
     parser.add_argument("--eval-every", type=int, default=50)
     parser.add_argument("--eval-batches", type=int, default=20)
-    parser.add_argument("--max-steps", type=int, default=500)
+    parser.add_argument("--max-steps", type=int, default=0)
 
     parser.add_argument("--sample-context", type=str, default="이 영화는")
     parser.add_argument("--sample-tokens", type=int, default=40)
