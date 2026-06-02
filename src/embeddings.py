@@ -48,7 +48,7 @@ class InputEmbedding(nn.Module):
         #raise NotImplementedError("InputEmbedding.forward를 구현하세요.")
         token_emb = self.token_embedding(x)
         batch_size, seq_len = x.shape
-        position_ids = torch.arange(seq_len)
+        position_ids = torch.arange(seq_len, device=x.device)
         position_emb = self.position_embedding(position_ids)
         out = token_emb + position_emb
         out = self.dropout(out)
