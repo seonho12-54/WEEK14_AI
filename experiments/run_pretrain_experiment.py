@@ -56,6 +56,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-steps", type=int, default=0)
 
     parser.add_argument("--sample-context", type=str, default="이 영화는")
+    parser.add_argument("--sample-contexts", nargs="*", default=None)
+    parser.add_argument("--sample-every", type=int, default=500)
     parser.add_argument("--sample-tokens", type=int, default=40)
     parser.add_argument("--temperature", type=float, default=0.8)
     parser.add_argument("--top-k", type=int, default=40)
@@ -174,6 +176,32 @@ def generate_sample(
     return tokenizer.decode(out[0].tolist())
 
 
+def print_samples(
+    model: GPTModel,
+    tokenizer: BPETokenizer,
+    device: torch.device,
+    contexts: list[str],
+    max_new_tokens: int,
+    temperature: float,
+    top_k: int | None,
+    title: str,
+) -> None:
+    print(f"\n{title}")
+    for context in contexts:
+        sample = generate_sample(
+            model=model,
+            tokenizer=tokenizer,
+            device=device,
+            context=context,
+            max_new_tokens=max_new_tokens,
+            temperature=temperature,
+            top_k=top_k,
+        )
+        print(f"[prompt] {context}")
+        print(sample)
+        print()
+
+
 def main() -> None:
     args = parse_args()
     torch.manual_seed(args.seed)
@@ -182,6 +210,7 @@ def main() -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     tokenizer = load_tokenizer(args.vocab_path)
+    sample_contexts = args.sample_contexts if args.sample_contexts else [args.sample_context]
     train_text = read_text(args.train_text, args.train_text_limit)
     val_text = read_text(args.val_text, args.val_text_limit)
 
@@ -254,29 +283,48 @@ def main() -> None:
                 print(f"step {global_step:5d} | train loss {loss.item():.4f}")
 
             if global_step % args.eval_every == 0:
+                train_loss_for_gap = loss.item()
                 val_loss = calc_loss_loader(
                     val_loader,
                     model,
                     device,
                     num_batches=args.eval_batches,
                 )
+                gap = val_loss - train_loss_for_gap
                 val_steps.append(global_step)
                 val_losses.append(val_loss)
-                print(f"step {global_step:5d} | val loss   {val_loss:.4f}")
+                print(
+                    f"step {global_step:5d} | "
+                    f"train loss {train_loss_for_gap:.4f} | "
+                    f"val loss {val_loss:.4f} | "
+                    f"gap {gap:+.4f}"
+                )
+
+            if args.sample_every is not None and args.sample_every > 0 and global_step % args.sample_every == 0:
+                print_samples(
+                    model=model,
+                    tokenizer=tokenizer,
+                    device=device,
+                    contexts=sample_contexts,
+                    max_new_tokens=args.sample_tokens,
+                    temperature=args.temperature,
+                    top_k=args.top_k,
+                    title=f"Samples at step {global_step}",
+                )
 
             if args.max_steps is not None and args.max_steps > 0 and global_step >= args.max_steps:
                 break
 
-        sample = generate_sample(
+        print_samples(
             model=model,
             tokenizer=tokenizer,
             device=device,
-            context=args.sample_context,
+            contexts=sample_contexts,
             max_new_tokens=args.sample_tokens,
             temperature=args.temperature,
             top_k=args.top_k,
+            title=f"Samples after epoch {epoch}",
         )
-        print(f"\nSample after epoch {epoch}:\n{sample}\n")
 
         if args.max_steps is not None and args.max_steps > 0 and global_step >= args.max_steps:
             break

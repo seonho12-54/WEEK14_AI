@@ -1,0 +1,7 @@
+train_count=500
+val_count=100
+first_train=10:8.1383
+last_train=5000:5.6312
+first_val=50:7.6062
+last_val=5000:5.7082
+png=C:\jungle5\week14\experiments\outputs\pretrain_loss_curve_from_test_log.png

@@ -1,0 +1,687 @@
+Device: cuda
+Tokenizer vocab: 3,000
+Train chars: 1,000,000 / Val chars: 100,000
+Train tokens: 583,778 / Val tokens: 58,388
+Model params: 1,172,224
+Train batches per epoch: 570
+Validation batches: 57
+
+Epoch 1/20
+step    10 | train loss 8.1383
+step    20 | train loss 8.0671
+step    30 | train loss 7.9630
+step    40 | train loss 7.8066
+step    50 | train loss 7.6570
+step    50 | val loss   7.6062
+step    60 | train loss 7.5173
+step    70 | train loss 7.4356
+step    80 | train loss 7.4236
+step    90 | train loss 7.4185
+step   100 | train loss 7.2995
+step   100 | val loss   7.3161
+step   110 | train loss 7.3097
+step   120 | train loss 7.3683
+step   130 | train loss 7.3376
+step   140 | train loss 7.3508
+step   150 | train loss 7.3770
+step   150 | val loss   7.2960
+step   160 | train loss 7.2996
+step   170 | train loss 7.3458
+step   180 | train loss 7.3119
+step   190 | train loss 7.2952
+step   200 | train loss 7.3589
+step   200 | val loss   7.2923
+step   210 | train loss 7.2503
+step   220 | train loss 7.2889
+step   230 | train loss 7.2807
+step   240 | train loss 7.2951
+step   250 | train loss 7.3262
+step   250 | val loss   7.2901
+step   260 | train loss 7.3535
+step   270 | train loss 7.3067
+step   280 | train loss 7.3480
+step   290 | train loss 7.3190
+step   300 | train loss 7.2696
+step   300 | val loss   7.2895
+step   310 | train loss 7.4051
+step   320 | train loss 7.3360
+step   330 | train loss 7.2825
+step   340 | train loss 7.3514
+step   350 | train loss 7.3643
+step   350 | val loss   7.2886
+step   360 | train loss 7.2631
+step   370 | train loss 7.3071
+step   380 | train loss 7.3054
+step   390 | train loss 7.3204
+step   400 | train loss 7.3268
+step   400 | val loss   7.2868
+step   410 | train loss 7.3010
+step   420 | train loss 7.2982
+step   430 | train loss 7.2491
+step   440 | train loss 7.3358
+step   450 | train loss 7.2423
+step   450 | val loss   7.2838
+step   460 | train loss 7.3596
+step   470 | train loss 7.3393
+step   480 | train loss 7.3155
+step   490 | train loss 7.2974
+step   500 | train loss 7.3345
+step   500 | val loss   7.2833
+step   510 | train loss 7.3474
+step   520 | train loss 7.3104
+step   530 | train loss 7.2873
+step   540 | train loss 7.3260
+step   550 | train loss 7.3138
+step   550 | val loss   7.2830
+step   560 | train loss 7.3014
+step   570 | train loss 7.3347
+
+Sample after epoch 1:
+이 영화는,지의인.다...,
+지이고들다지이의
+한...
+이어이아가이다.
+는다.과의들라 이이스만
+의
+
+
+Epoch 2/20
+step   580 | train loss 7.2569
+step   590 | train loss 7.2809
+step   600 | train loss 7.2943
+step   600 | val loss   7.2827
+step   610 | train loss 7.2891
+step   620 | train loss 7.2814
+step   630 | train loss 7.2808
+step   640 | train loss 7.2467
+step   650 | train loss 7.2432
+step   650 | val loss   7.2796
+step   660 | train loss 7.2054
+step   670 | train loss 7.2389
+step   680 | train loss 7.3100
+step   690 | train loss 7.3080
+step   700 | train loss 7.2948
+step   700 | val loss   7.2737
+step   710 | train loss 7.2693
+step   720 | train loss 7.2932
+step   730 | train loss 7.3376
+step   740 | train loss 7.2830
+step   750 | train loss 7.3163
+step   750 | val loss   7.2673
+step   760 | train loss 7.3627
+step   770 | train loss 7.2386
+step   780 | train loss 7.2440
+step   790 | train loss 7.2618
+step   800 | train loss 7.2986
+step   800 | val loss   7.2550
+step   810 | train loss 7.2455
+step   820 | train loss 7.2472
+step   830 | train loss 7.2944
+step   840 | train loss 7.2681
+step   850 | train loss 7.2363
+step   850 | val loss   7.2408
+step   860 | train loss 7.2614
+step   870 | train loss 7.2656
+step   880 | train loss 7.3110
+step   890 | train loss 7.2354
+step   900 | train loss 7.2629
+step   900 | val loss   7.2196
+step   910 | train loss 7.2082
+step   920 | train loss 7.1935
+step   930 | train loss 7.1388
+step   940 | train loss 7.3053
+step   950 | train loss 7.2153
+step   950 | val loss   7.1922
+step   960 | train loss 7.1598
+step   970 | train loss 7.1860
+step   980 | train loss 7.1615
+step   990 | train loss 7.2099
+step  1000 | train loss 7.2321
+step  1000 | val loss   7.1623
+step  1010 | train loss 7.2258
+step  1020 | train loss 7.2174
+step  1030 | train loss 7.1227
+step  1040 | train loss 7.1880
+step  1050 | train loss 7.2014
+step  1050 | val loss   7.1283
+step  1060 | train loss 7.1345
+step  1070 | train loss 7.2462
+step  1080 | train loss 7.1526
+step  1090 | train loss 7.1256
+step  1100 | train loss 7.1134
+step  1100 | val loss   7.0909
+step  1110 | train loss 7.1685
+step  1120 | train loss 7.1347
+step  1130 | train loss 7.0729
+step  1140 | train loss 7.1417
+
+Sample after epoch 2:
+이 영화는이이도 이시을의것�이...1대한건�의 한
+정말 영화,,어지어로 영화이 가을 안도 좋았을 기대고 보은의
+
+
+Epoch 3/20
+step  1150 | train loss 7.0165
+step  1150 | val loss   7.0471
+step  1160 | train loss 7.0228
+step  1170 | train loss 6.9587
+step  1180 | train loss 7.0254
+step  1190 | train loss 7.0215
+step  1200 | train loss 7.0296
+step  1200 | val loss   7.0057
+step  1210 | train loss 7.0010
+step  1220 | train loss 6.9777
+step  1230 | train loss 7.1184
+step  1240 | train loss 6.9648
+step  1250 | train loss 7.0309
+step  1250 | val loss   6.9592
+step  1260 | train loss 7.0525
+step  1270 | train loss 6.9595
+step  1280 | train loss 7.0243
+step  1290 | train loss 6.9969
+step  1300 | train loss 6.9765
+step  1300 | val loss   6.9125
+step  1310 | train loss 6.9471
+step  1320 | train loss 6.9289
+step  1330 | train loss 6.9752
+step  1340 | train loss 6.9247
+step  1350 | train loss 6.8899
+step  1350 | val loss   6.8661
+step  1360 | train loss 6.8774
+step  1370 | train loss 6.8889
+step  1380 | train loss 6.9089
+step  1390 | train loss 6.8479
+step  1400 | train loss 6.9050
+step  1400 | val loss   6.8199
+step  1410 | train loss 6.9389
+step  1420 | train loss 6.8434
+step  1430 | train loss 6.8997
+step  1440 | train loss 6.8571
+step  1450 | train loss 6.8573
+step  1450 | val loss   6.7696
+step  1460 | train loss 6.7482
+step  1470 | train loss 6.7560
+step  1480 | train loss 6.7274
+step  1490 | train loss 6.7834
+step  1500 | train loss 6.7687
+step  1500 | val loss   6.7223
+step  1510 | train loss 6.7742
+step  1520 | train loss 6.8552
+step  1530 | train loss 6.7634
+step  1540 | train loss 6.7168
+step  1550 | train loss 6.7603
+step  1550 | val loss   6.6758
+step  1560 | train loss 6.9030
+step  1570 | train loss 6.7191
+step  1580 | train loss 6.6662
+step  1590 | train loss 6.8493
+step  1600 | train loss 6.7100
+step  1600 | val loss   6.6265
+step  1610 | train loss 6.4645
+step  1620 | train loss 6.6575
+step  1630 | train loss 6.7518
+step  1640 | train loss 6.6002
+step  1650 | train loss 6.6298
+step  1650 | val loss   6.5788
+step  1660 | train loss 6.5768
+step  1670 | train loss 6.6770
+step  1680 | train loss 6.6969
+step  1690 | train loss 6.6480
+step  1700 | train loss 6.5776
+step  1700 | val loss   6.5315
+step  1710 | train loss 6.6476
+
+Sample after epoch 3:
+이 영화는도 생각이 느껴지 마
+시작
+지루한듯이코하긴야.
+역시, 어우에 아과 시고 가고 무비어의 사랑하고 그녀이..
+
+
+Epoch 4/20
+step  1720 | train loss 6.5896
+step  1730 | train loss 6.5184
+step  1740 | train loss 6.5163
+step  1750 | train loss 6.5623
+step  1750 | val loss   6.4929
+step  1760 | train loss 6.4655
+step  1770 | train loss 6.6364
+step  1780 | train loss 6.5758
+step  1790 | train loss 6.5397
+step  1800 | train loss 6.4425
+step  1800 | val loss   6.4574
+step  1810 | train loss 6.5134
+step  1820 | train loss 6.4989
+step  1830 | train loss 6.4830
+step  1840 | train loss 6.4222
+step  1850 | train loss 6.5120
+step  1850 | val loss   6.4177
+step  1860 | train loss 6.4928
+step  1870 | train loss 6.5359
+step  1880 | train loss 6.4134
+step  1890 | train loss 6.4335
+step  1900 | train loss 6.4637
+step  1900 | val loss   6.3845
+step  1910 | train loss 6.4579
+step  1920 | train loss 6.3619
+step  1930 | train loss 6.3892
+step  1940 | train loss 6.4840
+step  1950 | train loss 6.4118
+step  1950 | val loss   6.3520
+step  1960 | train loss 6.3295
+step  1970 | train loss 6.4329
+step  1980 | train loss 6.2823
+step  1990 | train loss 6.2928
+step  2000 | train loss 6.4215
+step  2000 | val loss   6.3215
+step  2010 | train loss 6.4043
+step  2020 | train loss 6.4747
+step  2030 | train loss 6.4044
+step  2040 | train loss 6.3439
+step  2050 | train loss 6.3332
+step  2050 | val loss   6.2874
+step  2060 | train loss 6.2950
+step  2070 | train loss 6.3158
+step  2080 | train loss 6.3031
+step  2090 | train loss 6.3773
+step  2100 | train loss 6.3005
+step  2100 | val loss   6.2617
+step  2110 | train loss 6.3571
+step  2120 | train loss 6.2780
+step  2130 | train loss 6.3272
+step  2140 | train loss 6.3162
+step  2150 | train loss 6.3028
+step  2150 | val loss   6.2338
+step  2160 | train loss 6.4010
+step  2170 | train loss 6.3052
+step  2180 | train loss 6.3742
+step  2190 | train loss 6.3400
+step  2200 | train loss 6.3125
+step  2200 | val loss   6.2072
+step  2210 | train loss 6.1511
+step  2220 | train loss 6.3182
+step  2230 | train loss 6.2684
+step  2240 | train loss 6.2681
+step  2250 | train loss 6.2837
+step  2250 | val loss   6.1881
+step  2260 | train loss 6.2435
+step  2270 | train loss 6.1779
+step  2280 | train loss 6.2350
+
+Sample after epoch 4:
+이 영화는 재미있음..
+재밌다..정말 그녀
+정말 영화. 영화였습니다. 하는 영화이 있는영화..이 오고 그때리우드이 참..., 이건 연기의 그의 의미는
+
+
+Epoch 5/20
+step  2290 | train loss 6.2020
+step  2300 | train loss 6.1547
+step  2300 | val loss   6.1635
+step  2310 | train loss 6.2560
+step  2320 | train loss 6.2317
+step  2330 | train loss 6.2462
+step  2340 | train loss 6.1358
+step  2350 | train loss 6.1546
+step  2350 | val loss   6.1490
+step  2360 | train loss 6.1975
+step  2370 | train loss 6.2389
+step  2380 | train loss 6.1813
+step  2390 | train loss 6.2583
+step  2400 | train loss 6.1595
+step  2400 | val loss   6.1281
+step  2410 | train loss 6.2240
+step  2420 | train loss 6.1901
+step  2430 | train loss 6.0478
+step  2440 | train loss 6.1193
+step  2450 | train loss 6.1988
+step  2450 | val loss   6.1112
+step  2460 | train loss 6.1357
+step  2470 | train loss 6.1583
+step  2480 | train loss 6.1704
+step  2490 | train loss 6.0576
+step  2500 | train loss 6.1553
+step  2500 | val loss   6.0915
+step  2510 | train loss 6.1114
+step  2520 | train loss 6.0769
+step  2530 | train loss 6.2887
+step  2540 | train loss 6.0841
+step  2550 | train loss 6.2417
+step  2550 | val loss   6.0742
+step  2560 | train loss 6.1680
+step  2570 | train loss 6.0286
+step  2580 | train loss 6.1372
+step  2590 | train loss 6.0693
+step  2600 | train loss 6.0351
+step  2600 | val loss   6.0602
+step  2610 | train loss 6.1382
+step  2620 | train loss 6.1765
+step  2630 | train loss 6.1870
+step  2640 | train loss 5.9953
+step  2650 | train loss 6.0591
+step  2650 | val loss   6.0426
+step  2660 | train loss 6.1533
+step  2670 | train loss 6.1611
+step  2680 | train loss 6.1176
+step  2690 | train loss 6.1645
+step  2700 | train loss 6.0980
+step  2700 | val loss   6.0236
+step  2710 | train loss 6.1110
+step  2720 | train loss 6.1640
+step  2730 | train loss 5.9746
+step  2740 | train loss 6.1198
+step  2750 | train loss 6.1245
+step  2750 | val loss   6.0095
+step  2760 | train loss 6.1050
+step  2770 | train loss 6.0699
+step  2780 | train loss 6.0803
+step  2790 | train loss 6.1900
+step  2800 | train loss 6.0314
+step  2800 | val loss   5.9955
+step  2810 | train loss 6.0483
+step  2820 | train loss 6.1126
+step  2830 | train loss 6.0012
+step  2840 | train loss 6.0504
+step  2850 | train loss 6.2250
+step  2850 | val loss   5.9834
+
+Sample after epoch 5:
+이 영화는 잘만든건 잘 못했어요. 봤다는 것을 잘해서 하지나?
+아의 결혼하고 지루해서 봤는데 그럴�은 진짜 재미없다
+일본한다
+2점치면 안되네요
+
+
+Epoch 6/20
+step  2860 | train loss 6.0287
+step  2870 | train loss 6.0087
+step  2880 | train loss 5.8518
+step  2890 | train loss 5.9175
+step  2900 | train loss 6.0350
+step  2900 | val loss   5.9758
+step  2910 | train loss 6.0263
+step  2920 | train loss 6.0134
+step  2930 | train loss 5.9817
+step  2940 | train loss 5.9731
+step  2950 | train loss 6.1191
+step  2950 | val loss   5.9629
+step  2960 | train loss 5.8550
+step  2970 | train loss 5.7748
+step  2980 | train loss 5.9172
+step  2990 | train loss 5.9759
+step  3000 | train loss 5.9250
+step  3000 | val loss   5.9560
+step  3010 | train loss 6.0163
+step  3020 | train loss 6.0191
+step  3030 | train loss 5.9610
+step  3040 | train loss 6.0773
+step  3050 | train loss 5.9422
+step  3050 | val loss   5.9440
+step  3060 | train loss 5.9993
+step  3070 | train loss 5.8543
+step  3080 | train loss 5.9121
+step  3090 | train loss 6.0306
+step  3100 | train loss 5.8585
+step  3100 | val loss   5.9320
+step  3110 | train loss 5.9994
+step  3120 | train loss 5.9276
+step  3130 | train loss 5.9544
+step  3140 | train loss 5.7824
+step  3150 | train loss 5.9981
+step  3150 | val loss   5.9236
+step  3160 | train loss 5.7910
+step  3170 | train loss 5.9512
+step  3180 | train loss 5.8424
+step  3190 | train loss 5.8973
+step  3200 | train loss 5.8638
+step  3200 | val loss   5.9115
+step  3210 | train loss 5.8969
+step  3220 | train loss 5.8855
+step  3230 | train loss 5.8460
+step  3240 | train loss 5.8954
+step  3250 | train loss 5.8964
+step  3250 | val loss   5.9002
+step  3260 | train loss 5.8631
+step  3270 | train loss 6.0639
+step  3280 | train loss 5.9038
+step  3290 | train loss 5.9201
+step  3300 | train loss 5.8720
+step  3300 | val loss   5.8896
+step  3310 | train loss 5.8555
+step  3320 | train loss 5.9781
+step  3330 | train loss 5.9234
+step  3340 | train loss 5.7890
+step  3350 | train loss 6.0117
+step  3350 | val loss   5.8803
+step  3360 | train loss 5.9270
+step  3370 | train loss 5.9649
+step  3380 | train loss 5.8648
+step  3390 | train loss 5.9603
+step  3400 | train loss 5.9206
+step  3400 | val loss   5.8733
+step  3410 | train loss 5.9292
+step  3420 | train loss 5.9551
+
+Sample after epoch 6:
+이 영화는도없다 정말 재밌게봤지만...
+난다. 진짜 아픔이 느껴진다
+이거 나이 느껴진다
+마지막 영화!
+너무 재미있는 좋았다 이쁨스테이
+제대로
+
+
+Epoch 7/20
+step  3430 | train loss 5.7270
+step  3440 | train loss 5.8745
+step  3450 | train loss 5.8965
+step  3450 | val loss   5.8669
+step  3460 | train loss 5.8706
+step  3470 | train loss 5.8580
+step  3480 | train loss 5.8959
+step  3490 | train loss 5.7795
+step  3500 | train loss 5.8123
+step  3500 | val loss   5.8619
+step  3510 | train loss 5.9335
+step  3520 | train loss 5.5206
+step  3530 | train loss 5.8142
+step  3540 | train loss 5.8062
+step  3550 | train loss 5.6659
+step  3550 | val loss   5.8553
+step  3560 | train loss 5.9441
+step  3570 | train loss 5.9150
+step  3580 | train loss 5.7750
+step  3590 | train loss 5.7343
+step  3600 | train loss 5.7965
+step  3600 | val loss   5.8484
+step  3610 | train loss 5.8090
+step  3620 | train loss 5.9982
+step  3630 | train loss 5.8709
+step  3640 | train loss 5.7840
+step  3650 | train loss 5.8654
+step  3650 | val loss   5.8389
+step  3660 | train loss 5.7898
+step  3670 | train loss 5.4856
+step  3680 | train loss 5.8254
+step  3690 | train loss 5.8010
+step  3700 | train loss 5.7301
+step  3700 | val loss   5.8320
+step  3710 | train loss 5.7375
+step  3720 | train loss 5.8684
+step  3730 | train loss 5.8166
+step  3740 | train loss 5.9481
+step  3750 | train loss 5.7056
+step  3750 | val loss   5.8237
+step  3760 | train loss 5.7694
+step  3770 | train loss 5.7975
+step  3780 | train loss 5.7585
+step  3790 | train loss 5.7932
+step  3800 | train loss 5.8224
+step  3800 | val loss   5.8165
+step  3810 | train loss 5.7430
+step  3820 | train loss 5.7760
+step  3830 | train loss 5.7376
+step  3840 | train loss 5.8854
+step  3850 | train loss 5.9022
+step  3850 | val loss   5.8103
+step  3860 | train loss 5.6603
+step  3870 | train loss 5.7225
+step  3880 | train loss 5.8743
+step  3890 | train loss 5.8312
+step  3900 | train loss 5.8902
+step  3900 | val loss   5.8044
+step  3910 | train loss 5.7730
+step  3920 | train loss 5.8580
+step  3930 | train loss 5.8349
+step  3940 | train loss 5.7455
+step  3950 | train loss 5.8508
+step  3950 | val loss   5.7992
+step  3960 | train loss 5.6777
+step  3970 | train loss 5.7054
+step  3980 | train loss 5.8193
+step  3990 | train loss 5.8175
+
+Sample after epoch 7:
+이 영화는 많이 받아닌이는것도 볼수있는것같은 이야기가 이끌리웃겨진다. 그려워요
+평가있음 급을 잃음....... +-
+
+
+Epoch 8/20
+step  4000 | train loss 5.7426
+step  4000 | val loss   5.7903
+step  4010 | train loss 5.6815
+step  4020 | train loss 5.7260
+step  4030 | train loss 5.7802
+step  4040 | train loss 5.7942
+step  4050 | train loss 5.8357
+step  4050 | val loss   5.7889
+step  4060 | train loss 5.6792
+step  4070 | train loss 5.6795
+step  4080 | train loss 5.7766
+step  4090 | train loss 5.6637
+step  4100 | train loss 5.6495
+step  4100 | val loss   5.7844
+step  4110 | train loss 5.7859
+step  4120 | train loss 5.6063
+step  4130 | train loss 5.8239
+step  4140 | train loss 5.5311
+step  4150 | train loss 5.6670
+step  4150 | val loss   5.7790
+step  4160 | train loss 5.6072
+step  4170 | train loss 5.6576
+step  4180 | train loss 5.6915
+step  4190 | train loss 5.7847
+step  4200 | train loss 5.7881
+step  4200 | val loss   5.7746
+step  4210 | train loss 5.5683
+step  4220 | train loss 5.6671
+step  4230 | train loss 5.7465
+step  4240 | train loss 5.7103
+step  4250 | train loss 5.6472
+step  4250 | val loss   5.7662
+step  4260 | train loss 5.6976
+step  4270 | train loss 5.7258
+step  4280 | train loss 5.7544
+step  4290 | train loss 5.6770
+step  4300 | train loss 5.7553
+step  4300 | val loss   5.7633
+step  4310 | train loss 5.6763
+step  4320 | train loss 5.7129
+step  4330 | train loss 5.7023
+step  4340 | train loss 5.7869
+step  4350 | train loss 5.7727
+step  4350 | val loss   5.7589
+step  4360 | train loss 5.6616
+step  4370 | train loss 5.8721
+step  4380 | train loss 5.6712
+step  4390 | train loss 5.7846
+step  4400 | train loss 5.7092
+step  4400 | val loss   5.7556
+step  4410 | train loss 5.6776
+step  4420 | train loss 5.8212
+step  4430 | train loss 5.7583
+step  4440 | train loss 5.6809
+step  4450 | train loss 5.7448
+step  4450 | val loss   5.7483
+step  4460 | train loss 5.6500
+step  4470 | train loss 5.8554
+step  4480 | train loss 5.8024
+step  4490 | train loss 5.7105
+step  4500 | train loss 5.4816
+step  4500 | val loss   5.7435
+step  4510 | train loss 5.6633
+step  4520 | train loss 5.6552
+step  4530 | train loss 5.8537
+step  4540 | train loss 5.6483
+step  4550 | train loss 5.6217
+step  4550 | val loss   5.7346
+step  4560 | train loss 5.6694
+
+Sample after epoch 8:
+이 영화는 남는 영화~
+기대안함은 좀비들에대한점] 어릴 수 없은 무슨 이래의 진장을 듯... 진짜 저렇게 정치는 영화...진짜 재미없어요. 아버지
+
+
+Epoch 9/20
+step  4570 | train loss 5.5005
+step  4580 | train loss 5.4665
+step  4590 | train loss 5.6657
+step  4600 | train loss 5.5392
+step  4600 | val loss   5.7357
+step  4610 | train loss 5.6675
+step  4620 | train loss 5.7930
+step  4630 | train loss 5.5502
+step  4640 | train loss 5.5399
+step  4650 | train loss 5.6813
+step  4650 | val loss   5.7339
+step  4660 | train loss 5.7075
+step  4670 | train loss 5.6459
+step  4680 | train loss 5.5296
+step  4690 | train loss 5.6181
+step  4700 | train loss 5.4786
+step  4700 | val loss   5.7301
+step  4710 | train loss 5.6804
+step  4720 | train loss 5.6466
+step  4730 | train loss 5.6866
+step  4740 | train loss 5.6720
+step  4750 | train loss 5.7850
+step  4750 | val loss   5.7268
+step  4760 | train loss 5.6109
+step  4770 | train loss 5.6542
+step  4780 | train loss 5.6394
+step  4790 | train loss 5.5969
+step  4800 | train loss 5.5727
+step  4800 | val loss   5.7223
+step  4810 | train loss 5.6504
+step  4820 | train loss 5.5576
+step  4830 | train loss 5.6084
+step  4840 | train loss 5.7202
+step  4850 | train loss 5.6168
+step  4850 | val loss   5.7189
+step  4860 | train loss 5.6127
+step  4870 | train loss 5.7066
+step  4880 | train loss 5.5870
+step  4890 | train loss 5.7269
+step  4900 | train loss 5.6402
+step  4900 | val loss   5.7136
+step  4910 | train loss 5.5884
+step  4920 | train loss 5.5440
+step  4930 | train loss 5.5335
+step  4940 | train loss 5.6384
+step  4950 | train loss 5.7025
+step  4950 | val loss   5.7093
+step  4960 | train loss 5.7473
+step  4970 | train loss 5.6050
+step  4980 | train loss 5.5926
+step  4990 | train loss 5.6001
+step  5000 | train loss 5.6312
+step  5000 | val loss   5.7082
+
+Sample after epoch 9:
+이 영화는 남기식들이 안맞네요
+최근적인 분위기용을 한데. 아는 것들이보지마라...
+전기고 다가 이 드라마라는 건지는 영화였음...
+
+
+Saved loss graph: /content/WEEK14_AI/experiments/outputs/pretrain_loss_curve.png
+Saved checkpoint: /content/WEEK14_AI/experiments/outputs/pretrain_experiment_last.pt

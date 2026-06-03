@@ -1,0 +1,10 @@
+﻿Test 02 parsed summary
+train_count=1140
+val_count=228
+global_step=11400
+config={vocab_size: 3000, context_length: 64, emb_dim: 128, n_heads: 4, n_layers: 2, drop_rate: 0.1, qkv_bias: False}
+first_train=10:8.138328552246094
+last_train=11400:5.301751136779785
+first_val=50:7.606246566772461
+last_val=11400:5.544123411178589
+comparison_to_test_01=train_loss improved 5.6312 -> 5.3018, val_loss improved 5.7082 -> 5.5441
