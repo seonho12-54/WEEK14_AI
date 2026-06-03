@@ -1,0 +1,17 @@
+﻿Test 04 fine-tuning summary
+checkpoint=Test 04 pretraining checkpoint
+train_samples=20000
+val_samples=5000
+test_samples=5000
+finetune_epochs=5
+optimizer=AdamW
+learning_rate=1e-4
+weight_decay=0.01
+batch_size=32
+train_loss=0.7592 -> 0.5635
+val_loss=0.6852 -> 0.5399
+train_acc=50.38% -> 70.57%
+val_acc=53.66% -> 72.28%
+test_loss=0.5257
+test_acc=73.46%
+interpretation=Test 04 checkpoint is a valid pretrained backbone for sentiment fine-tuning, but Test 02 checkpoint should also be fine-tuned under the same conditions before final selection.

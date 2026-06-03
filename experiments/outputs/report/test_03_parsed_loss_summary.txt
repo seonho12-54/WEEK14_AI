@@ -1,0 +1,12 @@
+﻿Test 03 parsed summary
+changed_hparam=drop_rate 0.1 -> 0.3
+global_step=11400
+config={vocab_size: 3000, context_length: 64, emb_dim: 128, n_heads: 4, n_layers: 2, drop_rate: 0.3, qkv_bias: False}
+train_count=1140
+val_count=228
+first_train=10:8.150274276733398
+last_train=11400:5.6487860679626465
+first_val=50:7.709189009666443
+last_val=11400:5.637741589546204
+comparison_to_test_02=train_loss worsened 5.3018 -> 5.6488, val_loss worsened 5.5441 -> 5.6377, final_gap improved +0.2424 -> -0.0110
+interpretation=dropout 0.3 reduced train/val gap but was too strong to improve validation loss

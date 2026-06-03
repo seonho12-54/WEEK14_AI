@@ -1,0 +1,13 @@
+﻿Test 04 parsed summary
+changed_hparam=drop_rate 0.3 -> 0.2
+global_step=11400
+config={vocab_size: 3000, context_length: 64, emb_dim: 128, n_heads: 4, n_layers: 2, drop_rate: 0.2, qkv_bias: False}
+train_count=1140
+val_count=228
+first_train=10:8.142640113830566
+last_train=11400:5.482786178588867
+first_val=50:7.65031795501709
+last_val=11400:5.577438521385193
+comparison_to_test_02=train_loss worsened 5.3018 -> 5.4828, val_loss worsened 5.5441 -> 5.5774, final_gap improved +0.2424 -> +0.0947
+comparison_to_test_03=train_loss improved 5.6488 -> 5.4828, val_loss improved 5.6377 -> 5.5774, final_gap increased -0.0110 -> +0.0947
+interpretation=dropout 0.2 is a balanced candidate between Test 02 performance and Test 03 regularization

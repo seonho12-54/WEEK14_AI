@@ -1,0 +1,1980 @@
+Device: cuda
+Tokenizer vocab: 3,000
+Train chars: 1,000,000 / Val chars: 100,000
+Train tokens: 583,778 / Val tokens: 58,388
+Model params: 1,172,224
+Train batches per epoch: 570
+Validation batches: 57
+
+Epoch 1/20
+step    10 | train loss 8.1426
+step    20 | train loss 8.0816
+step    30 | train loss 8.0112
+step    40 | train loss 7.8819
+step    50 | train loss 7.7215
+step    50 | train loss 7.7215 | val loss 7.6503 | gap -0.0711
+step    60 | train loss 7.5599
+step    70 | train loss 7.4752
+step    80 | train loss 7.4606
+step    90 | train loss 7.4463
+step   100 | train loss 7.3249
+step   100 | train loss 7.3249 | val loss 7.3224 | gap -0.0025
+step   110 | train loss 7.3244
+step   120 | train loss 7.3788
+step   130 | train loss 7.3499
+step   140 | train loss 7.3630
+step   150 | train loss 7.3866
+step   150 | train loss 7.3866 | val loss 7.2984 | gap -0.0883
+step   160 | train loss 7.3012
+step   170 | train loss 7.3602
+step   180 | train loss 7.3103
+step   190 | train loss 7.3040
+step   200 | train loss 7.3664
+step   200 | train loss 7.3664 | val loss 7.2940 | gap -0.0724
+step   210 | train loss 7.2592
+step   220 | train loss 7.2989
+step   230 | train loss 7.2816
+step   240 | train loss 7.3117
+step   250 | train loss 7.3256
+step   250 | train loss 7.3256 | val loss 7.2916 | gap -0.0340
+step   260 | train loss 7.3661
+step   270 | train loss 7.3133
+step   280 | train loss 7.3583
+step   290 | train loss 7.3306
+step   300 | train loss 7.2775
+step   300 | train loss 7.2775 | val loss 7.2911 | gap +0.0136
+step   310 | train loss 7.4185
+step   320 | train loss 7.3473
+step   330 | train loss 7.2859
+step   340 | train loss 7.3612
+step   350 | train loss 7.3718
+step   350 | train loss 7.3718 | val loss 7.2898 | gap -0.0820
+step   360 | train loss 7.2696
+step   370 | train loss 7.3188
+step   380 | train loss 7.3129
+step   390 | train loss 7.3317
+step   400 | train loss 7.3263
+step   400 | train loss 7.3263 | val loss 7.2887 | gap -0.0377
+step   410 | train loss 7.3066
+step   420 | train loss 7.3066
+step   430 | train loss 7.2556
+step   440 | train loss 7.3396
+step   450 | train loss 7.2512
+step   450 | train loss 7.2512 | val loss 7.2859 | gap +0.0347
+step   460 | train loss 7.3647
+step   470 | train loss 7.3519
+step   480 | train loss 7.3277
+step   490 | train loss 7.3095
+step   500 | train loss 7.3436
+step   500 | train loss 7.3436 | val loss 7.2855 | gap -0.0582
+
+Samples at step 500
+[prompt] 이 영화는
+이 영화는가,한 영화나을가어하고고영화도은게나나이이은고 고,...게나도,에이만
+해은은한의가고고
+
+[prompt] 정말
+정말도다도.에지는의.게에아지.한를...에가의영화..
+다.다다.
+에의기고.다의 영화가,이의의어
+
+step   510 | train loss 7.3605
+step   520 | train loss 7.3233
+step   530 | train loss 7.2894
+step   540 | train loss 7.3176
+step   550 | train loss 7.3200
+step   550 | train loss 7.3200 | val loss 7.2856 | gap -0.0344
+step   560 | train loss 7.3085
+step   570 | train loss 7.3315
+
+Samples after epoch 1
+[prompt] 이 영화는
+이 영화는..자스나나가
+이고가하고...고은은리를시..지도에의.을은하고지가 의어을을이다가이고다
+
+
+[prompt] 정말
+정말기다.다.
+이는한아 영화.시들,..
+...
+고이지나 이다도을인의 이 의한한의...,는는다..을..
+
+
+Epoch 2/20
+step   580 | train loss 7.2573
+step   590 | train loss 7.2928
+step   600 | train loss 7.2973
+step   600 | train loss 7.2973 | val loss 7.2860 | gap -0.0113
+step   610 | train loss 7.2942
+step   620 | train loss 7.2953
+step   630 | train loss 7.2908
+step   640 | train loss 7.2558
+step   650 | train loss 7.2428
+step   650 | train loss 7.2428 | val loss 7.2845 | gap +0.0417
+step   660 | train loss 7.2176
+step   670 | train loss 7.2448
+step   680 | train loss 7.3190
+step   690 | train loss 7.3283
+step   700 | train loss 7.3190
+step   700 | train loss 7.3190 | val loss 7.2805 | gap -0.0385
+step   710 | train loss 7.2880
+step   720 | train loss 7.3129
+step   730 | train loss 7.3502
+step   740 | train loss 7.3152
+step   750 | train loss 7.3337
+step   750 | train loss 7.3337 | val loss 7.2780 | gap -0.0556
+step   760 | train loss 7.3973
+step   770 | train loss 7.2615
+step   780 | train loss 7.2687
+step   790 | train loss 7.2757
+step   800 | train loss 7.3142
+step   800 | train loss 7.3142 | val loss 7.2718 | gap -0.0425
+step   810 | train loss 7.2798
+step   820 | train loss 7.2645
+step   830 | train loss 7.3082
+step   840 | train loss 7.3031
+step   850 | train loss 7.2689
+step   850 | train loss 7.2689 | val loss 7.2669 | gap -0.0021
+step   860 | train loss 7.2920
+step   870 | train loss 7.2895
+step   880 | train loss 7.3401
+step   890 | train loss 7.2551
+step   900 | train loss 7.3154
+step   900 | train loss 7.3154 | val loss 7.2555 | gap -0.0599
+step   910 | train loss 7.2586
+step   920 | train loss 7.2482
+step   930 | train loss 7.1871
+step   940 | train loss 7.3395
+step   950 | train loss 7.2562
+step   950 | train loss 7.2562 | val loss 7.2426 | gap -0.0136
+step   960 | train loss 7.2018
+step   970 | train loss 7.2362
+step   980 | train loss 7.2112
+step   990 | train loss 7.2653
+step  1000 | train loss 7.2971
+step  1000 | train loss 7.2971 | val loss 7.2246 | gap -0.0725
+
+Samples at step 1000
+[prompt] 이 영화는
+이 영화는한가,을게가,영화의 �의는가리...을이한도 이한이하는하고한 그에다아이한리는 영화 한.
+아의도는
+
+[prompt] 정말
+정말의아...
+인아나는로는서 한이 영화
+영화.
+영화고다.
+..자로
+지에나
+리는이의을에..
+에은는 가시라
+
+step  1010 | train loss 7.3195
+step  1020 | train loss 7.2898
+step  1030 | train loss 7.2168
+step  1040 | train loss 7.2614
+step  1050 | train loss 7.2704
+step  1050 | train loss 7.2704 | val loss 7.2086 | gap -0.0618
+step  1060 | train loss 7.2395
+step  1070 | train loss 7.3131
+step  1080 | train loss 7.2405
+step  1090 | train loss 7.2152
+step  1100 | train loss 7.2230
+step  1100 | train loss 7.2230 | val loss 7.1878 | gap -0.0352
+step  1110 | train loss 7.2567
+step  1120 | train loss 7.2295
+step  1130 | train loss 7.1644
+step  1140 | train loss 7.2424
+
+Samples after epoch 2
+[prompt] 이 영화는
+이 영화는게이고다�은...을 더이서.
+가게가,가한이하는는 안는에.,스이하는이에하..자를이니고
+
+
+[prompt] 정말
+정말한의의
+게,로을 M으로,
+거인어 영화...에나 이 안..을 것.해.
+은이에드의 안은한 한..
+...일
+
+
+Epoch 3/20
+step  1150 | train loss 7.1232
+step  1150 | train loss 7.1232 | val loss 7.1620 | gap +0.0388
+step  1160 | train loss 7.1459
+step  1170 | train loss 7.0912
+step  1180 | train loss 7.1414
+step  1190 | train loss 7.1258
+step  1200 | train loss 7.1980
+step  1200 | train loss 7.1980 | val loss 7.1374 | gap -0.0606
+step  1210 | train loss 7.1518
+step  1220 | train loss 7.1493
+step  1230 | train loss 7.2466
+step  1240 | train loss 7.1190
+step  1250 | train loss 7.1721
+step  1250 | train loss 7.1721 | val loss 7.1090 | gap -0.0631
+step  1260 | train loss 7.1794
+step  1270 | train loss 7.0923
+step  1280 | train loss 7.1724
+step  1290 | train loss 7.1511
+step  1300 | train loss 7.1257
+step  1300 | train loss 7.1257 | val loss 7.0709 | gap -0.0548
+step  1310 | train loss 7.1082
+step  1320 | train loss 7.1088
+step  1330 | train loss 7.1605
+step  1340 | train loss 7.0777
+step  1350 | train loss 7.0975
+step  1350 | train loss 7.0975 | val loss 7.0367 | gap -0.0608
+step  1360 | train loss 7.0799
+step  1370 | train loss 7.0929
+step  1380 | train loss 7.0876
+step  1390 | train loss 7.0747
+step  1400 | train loss 7.1079
+step  1400 | train loss 7.1079 | val loss 7.0016 | gap -0.1063
+step  1410 | train loss 7.1267
+step  1420 | train loss 7.0408
+step  1430 | train loss 7.0783
+step  1440 | train loss 7.0552
+step  1450 | train loss 7.0776
+step  1450 | train loss 7.0776 | val loss 6.9703 | gap -0.1073
+step  1460 | train loss 6.9949
+step  1470 | train loss 6.9792
+step  1480 | train loss 6.9595
+step  1490 | train loss 7.0065
+step  1500 | train loss 6.9872
+step  1500 | train loss 6.9872 | val loss 6.9305 | gap -0.0567
+
+Samples at step 1500
+[prompt] 이 영화는
+이 영화는도영화기의것음
+다는아 정말 재밌하고의 다도 본의 �로 안한것은 다스..워은 자게 생각면
+ㅋㅋ다.
+너무내가스개가
+
+[prompt] 정말
+정말이리나를..자
+기대은 보�하고
+"가 아니으로는 한
+시다.
+너무
+재미없었으로한 그로 더의 다...뭐 영화인고 하음
+
+step  1510 | train loss 6.9870
+step  1520 | train loss 7.0799
+step  1530 | train loss 6.9881
+step  1540 | train loss 6.9272
+step  1550 | train loss 6.9598
+step  1550 | train loss 6.9598 | val loss 6.8945 | gap -0.0653
+step  1560 | train loss 7.1127
+step  1570 | train loss 6.9685
+step  1580 | train loss 6.9310
+step  1590 | train loss 7.0895
+step  1600 | train loss 6.9871
+step  1600 | train loss 6.9871 | val loss 6.8506 | gap -0.1366
+step  1610 | train loss 6.7772
+step  1620 | train loss 6.9215
+step  1630 | train loss 6.9802
+step  1640 | train loss 6.8890
+step  1650 | train loss 6.8886
+step  1650 | train loss 6.8886 | val loss 6.8125 | gap -0.0760
+step  1660 | train loss 6.8115
+step  1670 | train loss 6.9231
+step  1680 | train loss 6.9869
+step  1690 | train loss 6.9279
+step  1700 | train loss 6.8369
+step  1700 | train loss 6.8369 | val loss 6.7667 | gap -0.0702
+step  1710 | train loss 6.9411
+
+Samples after epoch 3
+[prompt] 이 영화는
+이 영화는가의 매력지면자가없어에 지은 무이로 봤어서 진짜 감동은 이런고 무가 좀영화. 왜 안고 지스티가 아고 재미도 이도
+
+[prompt] 정말
+정말구� 영화의 명작면 잘 만들이 일고 나을 한이 였다.
+장가 될이 아니라.....
+나보는데..2은 자��은건한 액션의 사랑지
+
+
+Epoch 4/20
+step  1720 | train loss 6.8768
+step  1730 | train loss 6.8359
+step  1740 | train loss 6.8117
+step  1750 | train loss 6.8377
+step  1750 | train loss 6.8377 | val loss 6.7295 | gap -0.1082
+step  1760 | train loss 6.7698
+step  1770 | train loss 6.8546
+step  1780 | train loss 6.8780
+step  1790 | train loss 6.8189
+step  1800 | train loss 6.7746
+step  1800 | train loss 6.7746 | val loss 6.6942 | gap -0.0804
+step  1810 | train loss 6.7995
+step  1820 | train loss 6.7980
+step  1830 | train loss 6.8077
+step  1840 | train loss 6.7201
+step  1850 | train loss 6.8209
+step  1850 | train loss 6.8209 | val loss 6.6560 | gap -0.1649
+step  1860 | train loss 6.8005
+step  1870 | train loss 6.8075
+step  1880 | train loss 6.7158
+step  1890 | train loss 6.7503
+step  1900 | train loss 6.7647
+step  1900 | train loss 6.7647 | val loss 6.6221 | gap -0.1426
+step  1910 | train loss 6.7494
+step  1920 | train loss 6.6930
+step  1930 | train loss 6.6884
+step  1940 | train loss 6.7649
+step  1950 | train loss 6.7343
+step  1950 | train loss 6.7343 | val loss 6.5871 | gap -0.1472
+step  1960 | train loss 6.6236
+step  1970 | train loss 6.7616
+step  1980 | train loss 6.6156
+step  1990 | train loss 6.6259
+step  2000 | train loss 6.6767
+step  2000 | train loss 6.6767 | val loss 6.5532 | gap -0.1235
+
+Samples at step 2000
+[prompt] 이 영화는
+이 영화는 이하다
+시네요 너무 정말 그녀다 이런 개소소녀다의 본거고 이런 그�는 것과, 이건 시가 지루고 나
+20년의 정
+진짜
+
+[prompt] 정말
+정말 이런영화다
+진짜 정말 사랑은 왜 다
+마지막를 다..정말
+1대한건 본걸 감동이코고 하네이버에 무버었으면 잘생서 어이없는 영화
+
+step  2010 | train loss 6.7190
+step  2020 | train loss 6.7721
+step  2030 | train loss 6.6892
+step  2040 | train loss 6.6506
+step  2050 | train loss 6.5673
+step  2050 | train loss 6.5673 | val loss 6.5162 | gap -0.0511
+step  2060 | train loss 6.5798
+step  2070 | train loss 6.5773
+step  2080 | train loss 6.6121
+step  2090 | train loss 6.6748
+step  2100 | train loss 6.6235
+step  2100 | train loss 6.6235 | val loss 6.4829 | gap -0.1406
+step  2110 | train loss 6.6328
+step  2120 | train loss 6.6070
+step  2130 | train loss 6.6227
+step  2140 | train loss 6.6356
+step  2150 | train loss 6.6483
+step  2150 | train loss 6.6483 | val loss 6.4520 | gap -0.1963
+step  2160 | train loss 6.6347
+step  2170 | train loss 6.5911
+step  2180 | train loss 6.6336
+step  2190 | train loss 6.6390
+step  2200 | train loss 6.6015
+step  2200 | train loss 6.6015 | val loss 6.4193 | gap -0.1823
+step  2210 | train loss 6.4594
+step  2220 | train loss 6.5858
+step  2230 | train loss 6.5360
+step  2240 | train loss 6.5197
+step  2250 | train loss 6.5584
+step  2250 | train loss 6.5584 | val loss 6.3937 | gap -0.1647
+step  2260 | train loss 6.5930
+step  2270 | train loss 6.4938
+step  2280 | train loss 6.5600
+
+Samples after epoch 4
+[prompt] 이 영화는
+이 영화는가 있는 것도 영화도 참 정말 재밌습니다.
+나 하긴.. 다야.. 이런 것이 있는건지.
+재미도 재미있습니다. 이영화가 나을 만은 영화~!...21.
+
+[prompt] 정말
+정말 영화...?
+역시..ㅎㅎ 정말 정말 내용중의 생시리즈가 보게 볼수록 한가 보고... 정말 사람다... 그래도 나가 다가요..이 이지 이젠
+
+
+Epoch 5/20
+step  2290 | train loss 6.4963
+step  2300 | train loss 6.4523
+step  2300 | train loss 6.4523 | val loss 6.3654 | gap -0.0868
+step  2310 | train loss 6.5592
+step  2320 | train loss 6.5423
+step  2330 | train loss 6.5304
+step  2340 | train loss 6.4124
+step  2350 | train loss 6.4332
+step  2350 | train loss 6.4332 | val loss 6.3416 | gap -0.0916
+step  2360 | train loss 6.4737
+step  2370 | train loss 6.5391
+step  2380 | train loss 6.4289
+step  2390 | train loss 6.5623
+step  2400 | train loss 6.4533
+step  2400 | train loss 6.4533 | val loss 6.3168 | gap -0.1365
+step  2410 | train loss 6.5313
+step  2420 | train loss 6.4518
+step  2430 | train loss 6.3068
+step  2440 | train loss 6.3980
+step  2450 | train loss 6.5066
+step  2450 | train loss 6.5066 | val loss 6.2962 | gap -0.2104
+step  2460 | train loss 6.4355
+step  2470 | train loss 6.4330
+step  2480 | train loss 6.4600
+step  2490 | train loss 6.3811
+step  2500 | train loss 6.4588
+step  2500 | train loss 6.4588 | val loss 6.2709 | gap -0.1879
+
+Samples at step 2500
+[prompt] 이 영화는
+이 영화는 그려라게 나리우드까움...
+정말, 이따행을 받어리타지..
+신
+아닷�가 아니라..ㅠ�을 지려려이 아닌
+
+[prompt] 정말
+정말 반전
+진짜 보던, 연출이면 아서 너무 개그러물
+별로는 잘만든. 이런건 아니다.. 진짜 좋다!!!
+
+스
+재미없던 작품은 영원의
+
+step  2510 | train loss 6.3947
+step  2520 | train loss 6.3439
+step  2530 | train loss 6.5621
+step  2540 | train loss 6.3710
+step  2550 | train loss 6.5165
+step  2550 | train loss 6.5165 | val loss 6.2498 | gap -0.2667
+step  2560 | train loss 6.4874
+step  2570 | train loss 6.3022
+step  2580 | train loss 6.4086
+step  2590 | train loss 6.3628
+step  2600 | train loss 6.3229
+step  2600 | train loss 6.3229 | val loss 6.2291 | gap -0.0937
+step  2610 | train loss 6.4034
+step  2620 | train loss 6.4477
+step  2630 | train loss 6.4454
+step  2640 | train loss 6.2928
+step  2650 | train loss 6.3161
+step  2650 | train loss 6.3161 | val loss 6.2106 | gap -0.1055
+step  2660 | train loss 6.4239
+step  2670 | train loss 6.3943
+step  2680 | train loss 6.3543
+step  2690 | train loss 6.4504
+step  2700 | train loss 6.3864
+step  2700 | train loss 6.3864 | val loss 6.1909 | gap -0.1955
+step  2710 | train loss 6.3540
+step  2720 | train loss 6.3734
+step  2730 | train loss 6.2771
+step  2740 | train loss 6.3958
+step  2750 | train loss 6.3986
+step  2750 | train loss 6.3986 | val loss 6.1737 | gap -0.2249
+step  2760 | train loss 6.3429
+step  2770 | train loss 6.2936
+step  2780 | train loss 6.3269
+step  2790 | train loss 6.3869
+step  2800 | train loss 6.2768
+step  2800 | train loss 6.2768 | val loss 6.1557 | gap -0.1211
+step  2810 | train loss 6.3195
+step  2820 | train loss 6.3451
+step  2830 | train loss 6.2780
+step  2840 | train loss 6.3436
+step  2850 | train loss 6.4689
+step  2850 | train loss 6.4689 | val loss 6.1397 | gap -0.3292
+
+Samples after epoch 5
+[prompt] 이 영화는
+이 영화는 진짜 너무 어이없어서 이런것처럼 10점이고 2편이 없는 내리도 그럼의 이럴을 본것인데...내가 이연한 사랑을 떠다 이렇지만 잘
+
+[prompt] 정말
+정말 재미다!!!
+정말 진짜 어머니의 영화...
+이거움이 아닌 사랑은 사람화면 좋아했다
+마지막 그로 이영화는 어늘다.
+별이코믹디오늘에 가장 나
+
+
+Epoch 6/20
+step  2860 | train loss 6.3460
+step  2870 | train loss 6.2726
+step  2880 | train loss 6.1455
+step  2890 | train loss 6.1834
+step  2900 | train loss 6.3323
+step  2900 | train loss 6.3323 | val loss 6.1307 | gap -0.2015
+step  2910 | train loss 6.2840
+step  2920 | train loss 6.2822
+step  2930 | train loss 6.2176
+step  2940 | train loss 6.2034
+step  2950 | train loss 6.3593
+step  2950 | train loss 6.3593 | val loss 6.1129 | gap -0.2464
+step  2960 | train loss 6.1112
+step  2970 | train loss 6.0099
+step  2980 | train loss 6.1716
+step  2990 | train loss 6.2612
+step  3000 | train loss 6.1968
+step  3000 | train loss 6.1968 | val loss 6.1054 | gap -0.0914
+
+Samples at step 3000
+[prompt] 이 영화는
+이 영화는..ㅠ
+제의 조합이 없는 일주세요
+재미있다. 좋네요...정말 지루함..나와 봤는데.......
+내가 잘 만든 영화
+재밌음
+우리나라에 다시 보는데.
+
+[prompt] 정말
+정말 어이없어보고 재밌던영화 그녀의 사랑이면 재미를 봤지만.. 이런 사랑을 느낄것한 감동이 아니고 참..
+유도 좋고 재미있다고 나쁘던
+
+step  3010 | train loss 6.2517
+step  3020 | train loss 6.2241
+step  3030 | train loss 6.2060
+step  3040 | train loss 6.3008
+step  3050 | train loss 6.2310
+step  3050 | train loss 6.2310 | val loss 6.0913 | gap -0.1396
+step  3060 | train loss 6.1966
+step  3070 | train loss 6.1279
+step  3080 | train loss 6.1639
+step  3090 | train loss 6.2983
+step  3100 | train loss 6.1198
+step  3100 | train loss 6.1198 | val loss 6.0809 | gap -0.0389
+step  3110 | train loss 6.2306
+step  3120 | train loss 6.2245
+step  3130 | train loss 6.2224
+step  3140 | train loss 6.0715
+step  3150 | train loss 6.2424
+step  3150 | train loss 6.2424 | val loss 6.0688 | gap -0.1736
+step  3160 | train loss 6.0214
+step  3170 | train loss 6.2137
+step  3180 | train loss 6.0611
+step  3190 | train loss 6.1944
+step  3200 | train loss 6.1938
+step  3200 | train loss 6.1938 | val loss 6.0550 | gap -0.1388
+step  3210 | train loss 6.1160
+step  3220 | train loss 6.1168
+step  3230 | train loss 6.0800
+step  3240 | train loss 6.1593
+step  3250 | train loss 6.1363
+step  3250 | train loss 6.1363 | val loss 6.0407 | gap -0.0956
+step  3260 | train loss 6.1112
+step  3270 | train loss 6.3272
+step  3280 | train loss 6.1615
+step  3290 | train loss 6.1699
+step  3300 | train loss 6.1077
+step  3300 | train loss 6.1077 | val loss 6.0291 | gap -0.0786
+step  3310 | train loss 6.1146
+step  3320 | train loss 6.2241
+step  3330 | train loss 6.1284
+step  3340 | train loss 6.0557
+step  3350 | train loss 6.2082
+step  3350 | train loss 6.2082 | val loss 6.0168 | gap -0.1914
+step  3360 | train loss 6.1646
+step  3370 | train loss 6.1771
+step  3380 | train loss 6.0815
+step  3390 | train loss 6.1934
+step  3400 | train loss 6.1671
+step  3400 | train loss 6.1671 | val loss 6.0081 | gap -0.1590
+step  3410 | train loss 6.1653
+step  3420 | train loss 6.1771
+
+Samples after epoch 6
+[prompt] 이 영화는
+이 영화는 그리게 만드는데 영화 중요~!!
+정을 만큼영환상했어요!ㅠ
+이게 없는데 재미.시간도 더 안시는 아니다...ㅋㅋㅡㅡ;;;... 정말
+
+[prompt] 정말
+정말 이쁨라.
+그냥 The ㅠ
+다시도 다 좋아한 드라마.
+그렇다. 이영화를 본 드라마의 진랙스포드인데 나쁜 영화.. 이 영화가 보
+
+
+Epoch 7/20
+step  3430 | train loss 5.9663
+step  3440 | train loss 6.1089
+step  3450 | train loss 6.1551
+step  3450 | train loss 6.1551 | val loss 5.9991 | gap -0.1560
+step  3460 | train loss 6.0863
+step  3470 | train loss 6.1469
+step  3480 | train loss 6.1363
+step  3490 | train loss 6.0085
+step  3500 | train loss 6.0262
+step  3500 | train loss 6.0262 | val loss 5.9927 | gap -0.0335
+
+Samples at step 3500
+[prompt] 이 영화는
+이 영화는 나은 분들은 이런걸 재밌게 만드는 영화
+시간, 다시한번,
+시리즈했음~~ ㅉㅉㅉ마.
+어렸다. dvbwoungnd
+
+[prompt] 정말
+정말 재미있어가는 감동을 주은 영화만하면 사랑없이 평점도 그 수가 없어여
+한국.
+내가 어딸.
+정말 재미있어서 본것 같다
+이런가도 영화인데
+마지막는 이
+
+step  3510 | train loss 6.1497
+step  3520 | train loss 5.8339
+step  3530 | train loss 6.0670
+step  3540 | train loss 6.0628
+step  3550 | train loss 5.8913
+step  3550 | train loss 5.8913 | val loss 5.9863 | gap +0.0950
+step  3560 | train loss 6.1451
+step  3570 | train loss 6.1514
+step  3580 | train loss 6.0133
+step  3590 | train loss 5.9992
+step  3600 | train loss 6.0679
+step  3600 | train loss 6.0679 | val loss 5.9794 | gap -0.0885
+step  3610 | train loss 6.0214
+step  3620 | train loss 6.2128
+step  3630 | train loss 6.1599
+step  3640 | train loss 6.0368
+step  3650 | train loss 6.1160
+step  3650 | train loss 6.1160 | val loss 5.9661 | gap -0.1500
+step  3660 | train loss 5.9931
+step  3670 | train loss 5.8205
+step  3680 | train loss 6.0442
+step  3690 | train loss 6.0795
+step  3700 | train loss 5.9698
+step  3700 | train loss 5.9698 | val loss 5.9608 | gap -0.0090
+step  3710 | train loss 5.9727
+step  3720 | train loss 6.0390
+step  3730 | train loss 6.0595
+step  3740 | train loss 6.1727
+step  3750 | train loss 5.8921
+step  3750 | train loss 5.8921 | val loss 5.9474 | gap +0.0554
+step  3760 | train loss 5.9968
+step  3770 | train loss 6.0220
+step  3780 | train loss 5.9700
+step  3790 | train loss 6.0020
+step  3800 | train loss 6.0432
+step  3800 | train loss 6.0432 | val loss 5.9402 | gap -0.1030
+step  3810 | train loss 5.9658
+step  3820 | train loss 6.0225
+step  3830 | train loss 5.9254
+step  3840 | train loss 6.1152
+step  3850 | train loss 6.1652
+step  3850 | train loss 6.1652 | val loss 5.9315 | gap -0.2337
+step  3860 | train loss 5.8665
+step  3870 | train loss 5.9068
+step  3880 | train loss 6.0192
+step  3890 | train loss 6.0213
+step  3900 | train loss 6.0939
+step  3900 | train loss 6.0939 | val loss 5.9261 | gap -0.1678
+step  3910 | train loss 5.9926
+step  3920 | train loss 6.0842
+step  3930 | train loss 5.9910
+step  3940 | train loss 5.9800
+step  3950 | train loss 6.0882
+step  3950 | train loss 6.0882 | val loss 5.9217 | gap -0.1666
+step  3960 | train loss 5.9010
+step  3970 | train loss 5.9666
+step  3980 | train loss 6.0743
+step  3990 | train loss 5.9806
+
+Samples after epoch 7
+[prompt] 이 영화는
+이 영화는 진정한 동스톰�이 안습이제로서도 아니고 봤다!!!
+스를 보고 내기로서 정말 재밌다.
+재밌게 하는지.. 그냥 내인생은 애
+
+[prompt] 정말
+정말 잘만든 사랑스러웠고 정말 진짜 재미있습니다. 이렇게 생각할 수 없다.
+여주인공을 이끌아
+별로
+너무재밌다.
+이게 무슨 좋았어요...
+평점도 감동적이고 말만화
+
+
+Epoch 8/20
+step  4000 | train loss 6.0282
+step  4000 | train loss 6.0282 | val loss 5.9106 | gap -0.1176
+
+Samples at step 4000
+[prompt] 이 영화는
+이 영화는 어리도 별로
+역시는듯하는 작품이었지만 그래도 이렇게 재미없어서 어찌나?
+별연주겠음...
+이거 왜 이렇게, 역시 너무 재미있어요!
+정말 이렇게 재미없지만 왜
+
+[prompt] 정말
+정말 이런것들만 만들게 없을까~ Good ㅉㅉㅉ^^
+20년대 잘할듯
+내가 울게 잘 봤어요~
+유가요? 공감한 액션과 정한 진리다
+
+step  4010 | train loss 5.9445
+step  4020 | train loss 5.9451
+step  4030 | train loss 5.9869
+step  4040 | train loss 6.0449
+step  4050 | train loss 6.0924
+step  4050 | train loss 6.0924 | val loss 5.9076 | gap -0.1848
+step  4060 | train loss 5.9176
+step  4070 | train loss 5.9237
+step  4080 | train loss 5.9731
+step  4090 | train loss 5.9209
+step  4100 | train loss 5.8746
+step  4100 | train loss 5.8746 | val loss 5.9015 | gap +0.0269
+step  4110 | train loss 6.0371
+step  4120 | train loss 5.8647
+step  4130 | train loss 6.0089
+step  4140 | train loss 5.7629
+step  4150 | train loss 5.8669
+step  4150 | train loss 5.8669 | val loss 5.8976 | gap +0.0307
+step  4160 | train loss 5.8546
+step  4170 | train loss 5.8686
+step  4180 | train loss 5.9329
+step  4190 | train loss 6.0038
+step  4200 | train loss 6.0115
+step  4200 | train loss 6.0115 | val loss 5.8927 | gap -0.1188
+step  4210 | train loss 5.8271
+step  4220 | train loss 5.8748
+step  4230 | train loss 5.9540
+step  4240 | train loss 5.9115
+step  4250 | train loss 5.9005
+step  4250 | train loss 5.9005 | val loss 5.8827 | gap -0.0179
+step  4260 | train loss 5.9253
+step  4270 | train loss 5.9118
+step  4280 | train loss 5.9865
+step  4290 | train loss 5.8646
+step  4300 | train loss 5.9780
+step  4300 | train loss 5.9780 | val loss 5.8773 | gap -0.1007
+step  4310 | train loss 5.8923
+step  4320 | train loss 5.8919
+step  4330 | train loss 5.9103
+step  4340 | train loss 6.0461
+step  4350 | train loss 5.9566
+step  4350 | train loss 5.9566 | val loss 5.8694 | gap -0.0872
+step  4360 | train loss 5.9180
+step  4370 | train loss 6.0864
+step  4380 | train loss 5.8970
+step  4390 | train loss 5.9598
+step  4400 | train loss 5.9498
+step  4400 | train loss 5.9498 | val loss 5.8695 | gap -0.0803
+step  4410 | train loss 5.8712
+step  4420 | train loss 5.9797
+step  4430 | train loss 5.9878
+step  4440 | train loss 5.9046
+step  4450 | train loss 5.9478
+step  4450 | train loss 5.9478 | val loss 5.8601 | gap -0.0877
+step  4460 | train loss 5.8815
+step  4470 | train loss 6.0568
+step  4480 | train loss 5.9976
+step  4490 | train loss 5.9518
+step  4500 | train loss 5.6934
+step  4500 | train loss 5.6934 | val loss 5.8533 | gap +0.1599
+
+Samples at step 4500
+[prompt] 이 영화는
+이 영화는 아니었습니다.
+너무 재미있게 봤다. 재미를 보게 만드는것 같고 보이 안하냐...진짜 (여운 드라마, 배우가 아깝다고 본 부분을 받고 보지지 알
+
+[prompt] 정말
+정말 너무 재미없어서 재밌다ㅡㅡㅡㅡ
+내가 왠스토와 쫌�출연스럽고 지루하지 않아빠진 않을까. 아저씨는것는 영화보고 댓글아
+
+step  4510 | train loss 5.8562
+step  4520 | train loss 5.8340
+step  4530 | train loss 6.0543
+step  4540 | train loss 5.8640
+step  4550 | train loss 5.8437
+step  4550 | train loss 5.8437 | val loss 5.8411 | gap -0.0027
+step  4560 | train loss 5.9160
+
+Samples after epoch 8
+[prompt] 이 영화는
+이 영화는 재미있게 봤다큐수가 나오다니...별로..이건, 그리고 또 보는 영화.
+지금는 좋았습니다. 잘해진다. 정말 재밌음
+아.. 그녀....?
+영화가 뭐지?
+
+
+[prompt] 정말
+정말 재미는 것을 수 없지만 진짜 아빠진 않지만 그래도 이래의 이야기를 만들어낸 줄거리, 음악과 미스터는 안나오음
+수나가는 재미의 매력적인게
+
+
+Epoch 9/20
+step  4570 | train loss 5.7361
+step  4580 | train loss 5.6793
+step  4590 | train loss 5.9012
+step  4600 | train loss 5.7466
+step  4600 | train loss 5.7466 | val loss 5.8406 | gap +0.0940
+step  4610 | train loss 5.9157
+step  4620 | train loss 6.0143
+step  4630 | train loss 5.8065
+step  4640 | train loss 5.8143
+step  4650 | train loss 5.9047
+step  4650 | train loss 5.9047 | val loss 5.8388 | gap -0.0659
+step  4660 | train loss 5.9489
+step  4670 | train loss 5.8655
+step  4680 | train loss 5.7799
+step  4690 | train loss 5.8325
+step  4700 | train loss 5.7352
+step  4700 | train loss 5.7352 | val loss 5.8355 | gap +0.1003
+step  4710 | train loss 5.9007
+step  4720 | train loss 5.8342
+step  4730 | train loss 5.8981
+step  4740 | train loss 5.8545
+step  4750 | train loss 5.9891
+step  4750 | train loss 5.9891 | val loss 5.8302 | gap -0.1589
+step  4760 | train loss 5.8326
+step  4770 | train loss 5.8657
+step  4780 | train loss 5.8527
+step  4790 | train loss 5.8423
+step  4800 | train loss 5.7866
+step  4800 | train loss 5.7866 | val loss 5.8268 | gap +0.0402
+step  4810 | train loss 5.8549
+step  4820 | train loss 5.7701
+step  4830 | train loss 5.8142
+step  4840 | train loss 5.9023
+step  4850 | train loss 5.8191
+step  4850 | train loss 5.8191 | val loss 5.8241 | gap +0.0050
+step  4860 | train loss 5.8487
+step  4870 | train loss 5.9191
+step  4880 | train loss 5.8160
+step  4890 | train loss 5.9099
+step  4900 | train loss 5.8454
+step  4900 | train loss 5.8454 | val loss 5.8137 | gap -0.0317
+step  4910 | train loss 5.8415
+step  4920 | train loss 5.8199
+step  4930 | train loss 5.7969
+step  4940 | train loss 5.8223
+step  4950 | train loss 5.8527
+step  4950 | train loss 5.8527 | val loss 5.8131 | gap -0.0396
+step  4960 | train loss 5.8802
+step  4970 | train loss 5.7909
+step  4980 | train loss 5.7991
+step  4990 | train loss 5.8466
+step  5000 | train loss 5.8421
+step  5000 | train loss 5.8421 | val loss 5.8072 | gap -0.0348
+
+Samples at step 5000
+[prompt] 이 영화는
+이 영화는 아닌듯
+내 인생의 명작에서 이영화를 만들었고 지진 않고 지루한걸 좀 뒷는 그랬다. 김태가면 감동적이고 그녀를 떠옛날이
+
+[prompt] 정말
+정말 재밌고 보고 재밌는 영화...진짜..
+재미있게 봤음..
+개가 많고 하세요...스토리가 아깝다. 이건 M
+기대하고 더 과연스럽다,,,,,,,, 재밌음
+
+step  5010 | train loss 5.8049
+step  5020 | train loss 5.8211
+step  5030 | train loss 5.8602
+step  5040 | train loss 5.8145
+step  5050 | train loss 5.9396
+step  5050 | train loss 5.9396 | val loss 5.8023 | gap -0.1373
+step  5060 | train loss 5.8762
+step  5070 | train loss 5.8660
+step  5080 | train loss 5.6914
+step  5090 | train loss 5.8207
+step  5100 | train loss 5.6297
+step  5100 | train loss 5.6297 | val loss 5.7948 | gap +0.1651
+step  5110 | train loss 5.8145
+step  5120 | train loss 5.8472
+step  5130 | train loss 5.9131
+
+Samples after epoch 9
+[prompt] 이 영화는
+이 영화는 생각을 하음...
+일본하고 다 봤다. 그냥 감동도 있었으면, 어찌을 댄리에 속에 본건데 한것같다
+애니면 감동을 주다가 이런 영화를 쓰래
+
+[prompt] 정말
+정말 잘하세요 ㅋㅋ
+주인공... 어찌나 싶지만.. 이건 아니다. 진짜.. 이거 잘하지도 않고 재미없었는데 지금보는걸 진짜 최고, 평점에 속에서 나왔던가 아니라
+
+
+Epoch 10/20
+step  5140 | train loss 5.7609
+step  5150 | train loss 5.8723
+step  5150 | train loss 5.8723 | val loss 5.7941 | gap -0.0781
+step  5160 | train loss 5.6066
+step  5170 | train loss 5.8505
+step  5180 | train loss 5.9513
+step  5190 | train loss 5.7177
+step  5200 | train loss 5.7968
+step  5200 | train loss 5.7968 | val loss 5.7938 | gap -0.0030
+step  5210 | train loss 5.7800
+step  5220 | train loss 5.7503
+step  5230 | train loss 5.7588
+step  5240 | train loss 5.8097
+step  5250 | train loss 5.8186
+step  5250 | train loss 5.8186 | val loss 5.7944 | gap -0.0242
+step  5260 | train loss 5.7111
+step  5270 | train loss 5.7472
+step  5280 | train loss 5.8619
+step  5290 | train loss 5.8769
+step  5300 | train loss 5.7085
+step  5300 | train loss 5.7085 | val loss 5.7858 | gap +0.0774
+step  5310 | train loss 5.7993
+step  5320 | train loss 5.8595
+step  5330 | train loss 5.7981
+step  5340 | train loss 5.7594
+step  5350 | train loss 5.7790
+step  5350 | train loss 5.7790 | val loss 5.7870 | gap +0.0080
+step  5360 | train loss 5.7951
+step  5370 | train loss 5.7573
+step  5380 | train loss 5.7427
+step  5390 | train loss 5.7866
+step  5400 | train loss 5.8937
+step  5400 | train loss 5.8937 | val loss 5.7825 | gap -0.1113
+step  5410 | train loss 5.6752
+step  5420 | train loss 5.7011
+step  5430 | train loss 5.8597
+step  5440 | train loss 5.8272
+step  5450 | train loss 5.8187
+step  5450 | train loss 5.8187 | val loss 5.7750 | gap -0.0437
+step  5460 | train loss 5.7438
+step  5470 | train loss 5.6887
+step  5480 | train loss 5.8339
+step  5490 | train loss 5.8585
+step  5500 | train loss 5.8865
+step  5500 | train loss 5.8865 | val loss 5.7718 | gap -0.1148
+
+Samples at step 5500
+[prompt] 이 영화는
+이 영화는 진짜 잘하는 영화
+진짜 재미없네.
+그렇은 영화는다 이런 것을 읽고 본 것을 느끼게 해주는 영화다.
+정말 재밌게 봤는데.. 진짜 이것도 영화라고 감동을 주다ㅠㅠㅠ...
+
+[prompt] 정말
+정말 그럭저리포츠은 처음부터 끝까지 봐야할 수 있어서 뭐하나도 아니지만 그래도 눈을 받았는데..
+너무 재밌었으면 좋았습니다
+아오늘.정말 재밌어요????????
+
+step  5510 | train loss 5.7514
+step  5520 | train loss 5.7597
+step  5530 | train loss 5.9521
+step  5540 | train loss 5.6924
+step  5550 | train loss 5.6702
+step  5550 | train loss 5.6702 | val loss 5.7645 | gap +0.0943
+step  5560 | train loss 5.6667
+step  5570 | train loss 5.6829
+step  5580 | train loss 5.8002
+step  5590 | train loss 5.8523
+step  5600 | train loss 5.7322
+step  5600 | train loss 5.7322 | val loss 5.7570 | gap +0.0248
+step  5610 | train loss 5.8365
+step  5620 | train loss 5.7614
+step  5630 | train loss 5.9231
+step  5640 | train loss 5.8446
+step  5650 | train loss 5.6490
+step  5650 | train loss 5.6490 | val loss 5.7579 | gap +0.1089
+step  5660 | train loss 5.7429
+step  5670 | train loss 5.7079
+step  5680 | train loss 5.7898
+step  5690 | train loss 5.7838
+step  5700 | train loss 5.7247
+step  5700 | train loss 5.7247 | val loss 5.7540 | gap +0.0293
+
+Samples after epoch 10
+[prompt] 이 영화는
+이 영화는 더욱..그래픽을 받았다
+재미 없음. 재밌는 영화였어요. 나머지게 풀어감은 좋았으면 좋다. 그리고 이대급영화.
+내가 본것인지 모르겠다.
+
+[prompt] 정말
+정말 지루합니다 ....
+재미있습니다. 이하다는걸 영화라고...
+재미있게 만든 것 같는데 이건 뭐니다~
+이렇게 재밌다.
+시리즈도 좋고 역시 영화였다...그리지 않었다. 하지만
+
+
+Epoch 11/20
+step  5710 | train loss 5.7998
+step  5720 | train loss 5.6528
+step  5730 | train loss 5.8318
+step  5740 | train loss 5.5923
+step  5750 | train loss 5.6577
+step  5750 | train loss 5.6577 | val loss 5.7549 | gap +0.0971
+step  5760 | train loss 5.7532
+step  5770 | train loss 5.6734
+step  5780 | train loss 5.8147
+step  5790 | train loss 5.7133
+step  5800 | train loss 5.6574
+step  5800 | train loss 5.6574 | val loss 5.7528 | gap +0.0954
+step  5810 | train loss 5.6903
+step  5820 | train loss 5.6606
+step  5830 | train loss 5.6910
+step  5840 | train loss 5.8473
+step  5850 | train loss 5.7736
+step  5850 | train loss 5.7736 | val loss 5.7484 | gap -0.0252
+step  5860 | train loss 5.7795
+step  5870 | train loss 5.6029
+step  5880 | train loss 5.8352
+step  5890 | train loss 5.8086
+step  5900 | train loss 5.7053
+step  5900 | train loss 5.7053 | val loss 5.7497 | gap +0.0444
+step  5910 | train loss 5.6232
+step  5920 | train loss 5.8832
+step  5930 | train loss 5.7477
+step  5940 | train loss 5.6448
+step  5950 | train loss 5.7002
+step  5950 | train loss 5.7002 | val loss 5.7459 | gap +0.0457
+step  5960 | train loss 5.7302
+step  5970 | train loss 5.7179
+step  5980 | train loss 5.6903
+step  5990 | train loss 5.7570
+step  6000 | train loss 5.7684
+step  6000 | train loss 5.7684 | val loss 5.7438 | gap -0.0246
+
+Samples at step 6000
+[prompt] 이 영화는
+이 영화는 부터트를 만들다. 그랬습니다
+내가 나쁘는데?그럴거를 보이는 한거 같은데...
+신 분명하게 해결말이필요도 모르는 왜 이제냐??ㅠㅠ
+
+[prompt] 정말
+정말 재밌음. 어이없다면 왜 평점이 높으면 좋았고 지루함이 처음이다; ㅜiseeisoun Pt anopnond급
+
+step  6010 | train loss 5.6922
+step  6020 | train loss 5.7187
+step  6030 | train loss 5.6468
+step  6040 | train loss 5.6676
+step  6050 | train loss 5.7258
+step  6050 | train loss 5.7258 | val loss 5.7378 | gap +0.0119
+step  6060 | train loss 5.8602
+step  6070 | train loss 5.6425
+step  6080 | train loss 5.6972
+step  6090 | train loss 5.7020
+step  6100 | train loss 5.7247
+step  6100 | train loss 5.7247 | val loss 5.7324 | gap +0.0078
+step  6110 | train loss 5.7370
+step  6120 | train loss 5.7622
+step  6130 | train loss 5.7916
+step  6140 | train loss 5.6515
+step  6150 | train loss 5.7794
+step  6150 | train loss 5.7794 | val loss 5.7311 | gap -0.0483
+step  6160 | train loss 5.4730
+step  6170 | train loss 5.6167
+step  6180 | train loss 5.6993
+step  6190 | train loss 5.6891
+step  6200 | train loss 5.6440
+step  6200 | train loss 5.6440 | val loss 5.7280 | gap +0.0840
+step  6210 | train loss 5.8876
+step  6220 | train loss 5.8430
+step  6230 | train loss 5.7450
+step  6240 | train loss 5.6722
+step  6250 | train loss 5.7424
+step  6250 | train loss 5.7424 | val loss 5.7199 | gap -0.0226
+step  6260 | train loss 5.8799
+step  6270 | train loss 5.6896
+
+Samples after epoch 11
+[prompt] 이 영화는
+이 영화는 재미있어서 지금을 것도 아까워서 왜 이렇게 낮지만 평점 낮고 또 다른영화 보는데 역시 잘 모르고 봤는데,감동적이고 저런거리는 면혁하다는 건질
+
+[prompt] 정말
+정말 이럴싸한민국이 가는 그건 아니다.
+아먹을 거짓말을 하고 다행을 보지마라. 한국영화는 심하게 남는 처음으로 만든 부분이 너무 낮아서
+
+
+Epoch 12/20
+step  6280 | train loss 5.6868
+step  6290 | train loss 5.6600
+step  6300 | train loss 5.6153
+step  6300 | train loss 5.6153 | val loss 5.7203 | gap +0.1050
+step  6310 | train loss 5.6705
+step  6320 | train loss 5.7245
+step  6330 | train loss 5.7125
+step  6340 | train loss 5.6510
+step  6350 | train loss 5.5917
+step  6350 | train loss 5.5917 | val loss 5.7190 | gap +0.1272
+step  6360 | train loss 5.6141
+step  6370 | train loss 5.7123
+step  6380 | train loss 5.6991
+step  6390 | train loss 5.6463
+step  6400 | train loss 5.7242
+step  6400 | train loss 5.7242 | val loss 5.7205 | gap -0.0037
+step  6410 | train loss 5.7138
+step  6420 | train loss 5.6137
+step  6430 | train loss 5.5750
+step  6440 | train loss 5.6743
+step  6450 | train loss 5.6774
+step  6450 | train loss 5.6774 | val loss 5.7161 | gap +0.0387
+step  6460 | train loss 5.5951
+step  6470 | train loss 5.6683
+step  6480 | train loss 5.7216
+step  6490 | train loss 5.7188
+step  6500 | train loss 5.5664
+step  6500 | train loss 5.5664 | val loss 5.7102 | gap +0.1438
+
+Samples at step 6500
+[prompt] 이 영화는
+이 영화는 재밌다고 말았는데 이거 만들려요???
+진짜진짜 이런 영화가 될 듯하네요.5분만드는 연기나만하고 고민에 있어야 했다
+정말 감동적이고.. 근데 좀
+
+[prompt] 정말
+정말 감동적이고 다가락한걸 본다.
+정말 재미있게 봤다
+감독의 역량에 관계속작의 소중한다는 것을 보여주지마라^^
+옛날인 영화. 그녀의 자연스럽
+
+step  6510 | train loss 5.5733
+step  6520 | train loss 5.6990
+step  6530 | train loss 5.5717
+step  6540 | train loss 5.6599
+step  6550 | train loss 5.6908
+step  6550 | train loss 5.6908 | val loss 5.7073 | gap +0.0165
+step  6560 | train loss 5.8152
+step  6570 | train loss 5.5918
+step  6580 | train loss 5.7152
+step  6590 | train loss 5.6146
+step  6600 | train loss 5.6330
+step  6600 | train loss 5.6330 | val loss 5.7096 | gap +0.0766
+step  6610 | train loss 5.6792
+step  6620 | train loss 5.6273
+step  6630 | train loss 5.5371
+step  6640 | train loss 5.6703
+step  6650 | train loss 5.7110
+step  6650 | train loss 5.7110 | val loss 5.7024 | gap -0.0086
+step  6660 | train loss 5.6754
+step  6670 | train loss 5.5625
+step  6680 | train loss 5.7084
+step  6690 | train loss 5.6944
+step  6700 | train loss 5.6466
+step  6700 | train loss 5.6466 | val loss 5.6997 | gap +0.0531
+step  6710 | train loss 5.6952
+step  6720 | train loss 5.7763
+step  6730 | train loss 5.7645
+step  6740 | train loss 5.6838
+step  6750 | train loss 5.5442
+step  6750 | train loss 5.5442 | val loss 5.6976 | gap +0.1534
+step  6760 | train loss 5.6390
+step  6770 | train loss 5.4745
+step  6780 | train loss 5.7649
+step  6790 | train loss 5.6593
+step  6800 | train loss 5.7111
+step  6800 | train loss 5.7111 | val loss 5.6955 | gap -0.0156
+step  6810 | train loss 5.5941
+step  6820 | train loss 5.5648
+step  6830 | train loss 5.6843
+step  6840 | train loss 5.7216
+
+Samples after epoch 12
+[prompt] 이 영화는
+이 영화는 왜봤다
+사만에 봤네요. 정말 잘하는 사람으로 만든건가? 그것을 우연히 본거리는 루이만 할것같은 이야기를 생각하는데
+한국영화!
+여운
+
+[prompt] 정말
+정말 재미없게봤다 ㅋㅋ 진짜;;;
+26년 영화보다 감동도 없다.
+재밌던데?
+시는 사람이라면 더 잘생겼고 정말 어릴 때로서는 모습은 저렇게 잘
+
+
+Epoch 13/20
+step  6850 | train loss 5.5583
+step  6850 | train loss 5.5583 | val loss 5.6931 | gap +0.1347
+step  6860 | train loss 5.6354
+step  6870 | train loss 5.6662
+step  6880 | train loss 5.7138
+step  6890 | train loss 5.5931
+step  6900 | train loss 5.7240
+step  6900 | train loss 5.7240 | val loss 5.6922 | gap -0.0319
+step  6910 | train loss 5.4761
+step  6920 | train loss 5.5795
+step  6930 | train loss 5.7403
+step  6940 | train loss 5.6597
+step  6950 | train loss 5.5200
+step  6950 | train loss 5.5200 | val loss 5.6898 | gap +0.1698
+step  6960 | train loss 5.6606
+step  6970 | train loss 5.6540
+step  6980 | train loss 5.6081
+step  6990 | train loss 5.6648
+step  7000 | train loss 5.6893
+step  7000 | train loss 5.6893 | val loss 5.6884 | gap -0.0009
+
+Samples at step 7000
+[prompt] 이 영화는
+이 영화는 처음으로 가득력에 보다봤음
+난다!! 내가 다시 봤습니다. 예상적인 요소가 있네요~~~
+평점이 왜이렇게 재미없었는데..이건 뭐라와 함께 가지고 있
+
+[prompt] 정말
+정말 재미있음.
+정말 지루하기 영화임..
+내울 정도.. 아오랜만에 너무 좋아하시는 그럴거든다. 저렇게 봐야할 수 있음
+재미가 없다...그렇다ㅡㅡ! 그래서 무
+
+step  7010 | train loss 5.5877
+step  7020 | train loss 5.7345
+step  7030 | train loss 5.7726
+step  7040 | train loss 5.6728
+step  7050 | train loss 5.6404
+step  7050 | train loss 5.6404 | val loss 5.6869 | gap +0.0465
+step  7060 | train loss 5.6533
+step  7070 | train loss 5.6102
+step  7080 | train loss 5.5455
+step  7090 | train loss 5.5010
+step  7100 | train loss 5.4988
+step  7100 | train loss 5.4988 | val loss 5.6881 | gap +0.1894
+step  7110 | train loss 5.6590
+step  7120 | train loss 5.7392
+step  7130 | train loss 5.6236
+step  7140 | train loss 5.5407
+step  7150 | train loss 5.6797
+step  7150 | train loss 5.6797 | val loss 5.6842 | gap +0.0044
+step  7160 | train loss 5.5099
+step  7170 | train loss 5.6421
+step  7180 | train loss 5.6792
+step  7190 | train loss 5.6749
+step  7200 | train loss 5.5023
+step  7200 | train loss 5.5023 | val loss 5.6826 | gap +0.1803
+step  7210 | train loss 5.6041
+step  7220 | train loss 5.4641
+step  7230 | train loss 5.7030
+step  7240 | train loss 5.6088
+step  7250 | train loss 5.6422
+step  7250 | train loss 5.6422 | val loss 5.6812 | gap +0.0391
+step  7260 | train loss 5.6389
+step  7270 | train loss 5.6111
+step  7280 | train loss 5.6877
+step  7290 | train loss 5.6155
+step  7300 | train loss 5.6705
+step  7300 | train loss 5.6705 | val loss 5.6800 | gap +0.0095
+step  7310 | train loss 5.6046
+step  7320 | train loss 5.6670
+step  7330 | train loss 5.6437
+step  7340 | train loss 5.7511
+step  7350 | train loss 5.6026
+step  7350 | train loss 5.6026 | val loss 5.6754 | gap +0.0728
+step  7360 | train loss 5.5057
+step  7370 | train loss 5.6677
+step  7380 | train loss 5.5395
+step  7390 | train loss 5.6606
+step  7400 | train loss 5.4605
+step  7400 | train loss 5.4605 | val loss 5.6688 | gap +0.2083
+step  7410 | train loss 5.6210
+
+Samples after epoch 13
+[prompt] 이 영화는
+이 영화는 부끄럽으론을 이연스럽었다고 봄스로맨을 안쓰고도 많고 정말 최고
+나...진짜.. 근데 진짜 어른은 왜 이런 영화라는 배우
+
+[prompt] 정말
+정말 재미없고 이런 영화를 만들려다 다녀가치, 나중에 제일 너무 지루한 영화네요ㅠㅜ...
+이거있음
+어난다
+개노잼...
+정적으로 이영화가 보는데... 그냥 쓰레기
+
+
+Epoch 14/20
+step  7420 | train loss 5.6143
+step  7430 | train loss 5.6061
+step  7440 | train loss 5.7125
+step  7450 | train loss 5.4664
+step  7450 | train loss 5.4664 | val loss 5.6749 | gap +0.2086
+step  7460 | train loss 5.4622
+step  7470 | train loss 5.6771
+step  7480 | train loss 5.5806
+step  7490 | train loss 5.6300
+step  7500 | train loss 5.6322
+step  7500 | train loss 5.6322 | val loss 5.6697 | gap +0.0374
+
+Samples at step 7500
+[prompt] 이 영화는
+이 영화는 안 될것같다
+뭐냐?
+기대 안나오아프다.
+평점 왜이래곤 한마디로 재밌음)
+이 영화를 봤었는데 이건 재미없네~^^
+내가 이영화가 그냥 이 영화로버려내
+
+[prompt] 정말
+정말 좋으면...
+감독이트리스가 쓰래도 더럽다. 그들이 보면 가지고 다행되는영화로맨을 위해 볼껏한듯
+역시 저런 그리웃어
+
+step  7510 | train loss 5.5402
+step  7520 | train loss 5.6399
+step  7530 | train loss 5.4520
+step  7540 | train loss 5.4563
+step  7550 | train loss 5.5678
+step  7550 | train loss 5.5678 | val loss 5.6690 | gap +0.1012
+step  7560 | train loss 5.6331
+step  7570 | train loss 5.5335
+step  7580 | train loss 5.4620
+step  7590 | train loss 5.6612
+step  7600 | train loss 5.6044
+step  7600 | train loss 5.6044 | val loss 5.6657 | gap +0.0613
+step  7610 | train loss 5.4680
+step  7620 | train loss 5.4887
+step  7630 | train loss 5.6075
+step  7640 | train loss 5.5724
+step  7650 | train loss 5.7061
+step  7650 | train loss 5.7061 | val loss 5.6698 | gap -0.0363
+step  7660 | train loss 5.5939
+step  7670 | train loss 5.4830
+step  7680 | train loss 5.6297
+step  7690 | train loss 5.4886
+step  7700 | train loss 5.6131
+step  7700 | train loss 5.6131 | val loss 5.6668 | gap +0.0537
+step  7710 | train loss 5.4221
+step  7720 | train loss 5.6019
+step  7730 | train loss 5.6824
+step  7740 | train loss 5.5853
+step  7750 | train loss 5.4794
+step  7750 | train loss 5.4794 | val loss 5.6633 | gap +0.1839
+step  7760 | train loss 5.6016
+step  7770 | train loss 5.3823
+step  7780 | train loss 5.5787
+step  7790 | train loss 5.5169
+step  7800 | train loss 5.5964
+step  7800 | train loss 5.5964 | val loss 5.6627 | gap +0.0664
+step  7810 | train loss 5.7033
+step  7820 | train loss 5.6314
+step  7830 | train loss 5.4573
+step  7840 | train loss 5.5541
+step  7850 | train loss 5.3549
+step  7850 | train loss 5.3549 | val loss 5.6616 | gap +0.3067
+step  7860 | train loss 5.4577
+step  7870 | train loss 5.6049
+step  7880 | train loss 5.5996
+step  7890 | train loss 5.5145
+step  7900 | train loss 5.6944
+step  7900 | train loss 5.6944 | val loss 5.6552 | gap -0.0392
+step  7910 | train loss 5.6260
+step  7920 | train loss 5.5971
+step  7930 | train loss 5.6718
+step  7940 | train loss 5.5871
+step  7950 | train loss 5.4669
+step  7950 | train loss 5.4669 | val loss 5.6535 | gap +0.1866
+step  7960 | train loss 5.4489
+step  7970 | train loss 5.4757
+step  7980 | train loss 5.5568
+
+Samples after epoch 14
+[prompt] 이 영화는
+이 영화는 진행하기 힘들었지만...정말 재밌어요 ^^*************ㄱ. 어딩이다..
+추리즘이션과 함께 보
+
+[prompt] 정말
+정말 재밌었던 영화.
+재밌고도록도 재미도 없고 그러냐..정말 재밌네...너무나도 평점에 관람의 드라마! ^^
+재미도없고 재밌네요^^
+재미 없지만...어나는
+
+
+Epoch 15/20
+step  7990 | train loss 5.6103
+step  8000 | train loss 5.5483
+step  8000 | train loss 5.5483 | val loss 5.6496 | gap +0.1013
+
+Samples at step 8000
+[prompt] 이 영화는
+이 영화는 별로였다. 하지만 GMDngfsedpispisowe eeatanttieks tonon
+
+[prompt] 정말
+정말 재밌게 봤습니다.
+12년전의 시트뚝이 없습니다
+무한 것이다.
+지루한 영화.
+여운건 알려면 재밌어서.. 너무나름다운 애니메이션을 정도로 저런
+
+step  8010 | train loss 5.4840
+step  8020 | train loss 5.1648
+step  8030 | train loss 5.4339
+step  8040 | train loss 5.5740
+step  8050 | train loss 5.4961
+step  8050 | train loss 5.4961 | val loss 5.6562 | gap +0.1600
+step  8060 | train loss 5.4547
+step  8070 | train loss 5.5634
+step  8080 | train loss 5.5933
+step  8090 | train loss 5.6371
+step  8100 | train loss 5.5512
+step  8100 | train loss 5.5512 | val loss 5.6505 | gap +0.0993
+step  8110 | train loss 5.4515
+step  8120 | train loss 5.5274
+step  8130 | train loss 5.5024
+step  8140 | train loss 5.5785
+step  8150 | train loss 5.5422
+step  8150 | train loss 5.5422 | val loss 5.6526 | gap +0.1104
+step  8160 | train loss 5.5397
+step  8170 | train loss 5.6041
+step  8180 | train loss 5.5505
+step  8190 | train loss 5.5684
+step  8200 | train loss 5.5451
+step  8200 | train loss 5.5451 | val loss 5.6513 | gap +0.1062
+step  8210 | train loss 5.5007
+step  8220 | train loss 5.5137
+step  8230 | train loss 5.6321
+step  8240 | train loss 5.4919
+step  8250 | train loss 5.4561
+step  8250 | train loss 5.4561 | val loss 5.6485 | gap +0.1924
+step  8260 | train loss 5.5579
+step  8270 | train loss 5.4352
+step  8280 | train loss 5.4645
+step  8290 | train loss 5.5052
+step  8300 | train loss 5.6511
+step  8300 | train loss 5.6511 | val loss 5.6420 | gap -0.0091
+step  8310 | train loss 5.4557
+step  8320 | train loss 5.5414
+step  8330 | train loss 5.5978
+step  8340 | train loss 5.5148
+step  8350 | train loss 5.4972
+step  8350 | train loss 5.4972 | val loss 5.6450 | gap +0.1478
+step  8360 | train loss 5.5671
+step  8370 | train loss 5.6291
+step  8380 | train loss 5.5970
+step  8390 | train loss 5.5681
+step  8400 | train loss 5.5771
+step  8400 | train loss 5.5771 | val loss 5.6465 | gap +0.0694
+step  8410 | train loss 5.5214
+step  8420 | train loss 5.5220
+step  8430 | train loss 5.6276
+step  8440 | train loss 5.6444
+step  8450 | train loss 5.5273
+step  8450 | train loss 5.5273 | val loss 5.6388 | gap +0.1114
+step  8460 | train loss 5.6304
+step  8470 | train loss 5.5496
+step  8480 | train loss 5.4400
+step  8490 | train loss 5.5672
+step  8500 | train loss 5.6270
+step  8500 | train loss 5.6270 | val loss 5.6385 | gap +0.0115
+
+Samples at step 8500
+[prompt] 이 영화는
+이 영화는 왜 죽고 있는건 지켜줬어요^^****ㄷㄷ
+정말 대박
+이 영화가 나홀리나니다
+쓰레기이 남는 영화였는데 이쁜 그릴 때가면서
+
+[prompt] 정말
+정말 재미없다큐아!!
+캰���찍은 진짜 이런 영화다. 그녀와 아들이 다빠와 비행
+무비로운 재미 없음 ㅋㅋ 평점을 보여주는 영화다
+
+
+step  8510 | train loss 5.5868
+step  8520 | train loss 5.5052
+step  8530 | train loss 5.4098
+step  8540 | train loss 5.6759
+step  8550 | train loss 5.6444
+step  8550 | train loss 5.6444 | val loss 5.6363 | gap -0.0080
+
+Samples after epoch 15
+[prompt] 이 영화는
+이 영화는 대결혼을 볼거리다. 근데 영화관에서 어떻게 하지?
+여인것 같다.
+무서도 재미도 없고
+성룡이다.. 근데 정말 재밌게 만들었다.
+분들을 위한 반전과 대한
+
+[prompt] 정말
+정말 재미있고 또 다른지 마치게 웃긴하지만....긴장감탈가 이 영화가 좀 유치하다
+이런게 되었습니다
+정말 감동적인 영화. . 하지만 그때우연히 보게 됨울 뿐
+
+
+Epoch 16/20
+step  8560 | train loss 5.4723
+step  8570 | train loss 5.5789
+step  8580 | train loss 5.4098
+step  8590 | train loss 5.5334
+step  8600 | train loss 5.5006
+step  8600 | train loss 5.5006 | val loss 5.6385 | gap +0.1379
+step  8610 | train loss 5.4753
+step  8620 | train loss 5.3612
+step  8630 | train loss 5.5217
+step  8640 | train loss 5.4607
+step  8650 | train loss 5.5607
+step  8650 | train loss 5.5607 | val loss 5.6362 | gap +0.0756
+step  8660 | train loss 5.5454
+step  8670 | train loss 5.4431
+step  8680 | train loss 5.6226
+step  8690 | train loss 5.5512
+step  8700 | train loss 5.5106
+step  8700 | train loss 5.5106 | val loss 5.6352 | gap +0.1246
+step  8710 | train loss 5.5250
+step  8720 | train loss 5.6908
+step  8730 | train loss 5.5270
+step  8740 | train loss 5.4986
+step  8750 | train loss 5.4877
+step  8750 | train loss 5.4877 | val loss 5.6327 | gap +0.1449
+step  8760 | train loss 5.4943
+step  8770 | train loss 5.5230
+step  8780 | train loss 5.4832
+step  8790 | train loss 5.5659
+step  8800 | train loss 5.3332
+step  8800 | train loss 5.3332 | val loss 5.6352 | gap +0.3019
+step  8810 | train loss 5.5274
+step  8820 | train loss 5.4394
+step  8830 | train loss 5.5972
+step  8840 | train loss 5.4409
+step  8850 | train loss 5.4900
+step  8850 | train loss 5.4900 | val loss 5.6315 | gap +0.1414
+step  8860 | train loss 5.4716
+step  8870 | train loss 5.6100
+step  8880 | train loss 5.6402
+step  8890 | train loss 5.5340
+step  8900 | train loss 5.5067
+step  8900 | train loss 5.5067 | val loss 5.6293 | gap +0.1226
+step  8910 | train loss 5.4388
+step  8920 | train loss 5.4529
+step  8930 | train loss 5.5557
+step  8940 | train loss 5.3811
+step  8950 | train loss 5.6031
+step  8950 | train loss 5.6031 | val loss 5.6308 | gap +0.0276
+step  8960 | train loss 5.5333
+step  8970 | train loss 5.5888
+step  8980 | train loss 5.6592
+step  8990 | train loss 5.4745
+step  9000 | train loss 5.5451
+step  9000 | train loss 5.5451 | val loss 5.6259 | gap +0.0808
+
+Samples at step 9000
+[prompt] 이 영화는
+이 영화는 대놓고 재밌었고, 너무 슬픔...아직을 알려웠음.
+당시 봤음
+1점도 아깝다.
+개로 보여주는것도 아까운건지 지금까지, 그리고 이끌�새가
+
+[prompt] 정말
+정말 잘할 것이다!!
+2010007점이라니 Thnds ngood mostaneverye eevisen
+
+step  9010 | train loss 5.5546
+step  9020 | train loss 5.4397
+step  9030 | train loss 5.4361
+step  9040 | train loss 5.6530
+step  9050 | train loss 5.5414
+step  9050 | train loss 5.5414 | val loss 5.6223 | gap +0.0809
+step  9060 | train loss 5.6101
+step  9070 | train loss 5.5027
+step  9080 | train loss 5.4358
+step  9090 | train loss 5.6566
+step  9100 | train loss 5.5061
+step  9100 | train loss 5.5061 | val loss 5.6232 | gap +0.1170
+step  9110 | train loss 5.4565
+step  9120 | train loss 5.4952
+
+Samples after epoch 16
+[prompt] 이 영화는
+이 영화는 아닐링보다 훨낮아들이 보기싫는 것은 그랬다
+그냥...아요
+진짜 너무나도 잘만든 사람을 울고는 왜 해주는게 만든다. 이건 뭐지..
+
+[prompt] 정말
+정말 너무 재미없음
+쓰데..이런것도 정말 대단하다.
+신에 빠른인도..
+오랜만에 1탄한 스토리로는줄 모르네요...그라...이냐?
+정말 재미있음
+이거
+
+
+Epoch 17/20
+step  9130 | train loss 5.5794
+step  9140 | train loss 5.5596
+step  9150 | train loss 5.3998
+step  9150 | train loss 5.3998 | val loss 5.6249 | gap +0.2251
+step  9160 | train loss 5.5334
+step  9170 | train loss 5.6484
+step  9180 | train loss 5.4228
+step  9190 | train loss 5.4364
+step  9200 | train loss 5.5077
+step  9200 | train loss 5.5077 | val loss 5.6244 | gap +0.1167
+step  9210 | train loss 5.6169
+step  9220 | train loss 5.4737
+step  9230 | train loss 5.4959
+step  9240 | train loss 5.5000
+step  9250 | train loss 5.5116
+step  9250 | train loss 5.5116 | val loss 5.6244 | gap +0.1128
+step  9260 | train loss 5.4390
+step  9270 | train loss 5.4052
+step  9280 | train loss 5.5237
+step  9290 | train loss 5.4659
+step  9300 | train loss 5.4492
+step  9300 | train loss 5.4492 | val loss 5.6246 | gap +0.1755
+step  9310 | train loss 5.5297
+step  9320 | train loss 5.5906
+step  9330 | train loss 5.4589
+step  9340 | train loss 5.4841
+step  9350 | train loss 5.3164
+step  9350 | train loss 5.3164 | val loss 5.6231 | gap +0.3068
+step  9360 | train loss 5.3760
+step  9370 | train loss 5.4471
+step  9380 | train loss 5.5301
+step  9390 | train loss 5.3513
+step  9400 | train loss 5.6116
+step  9400 | train loss 5.6116 | val loss 5.6187 | gap +0.0071
+step  9410 | train loss 5.3449
+step  9420 | train loss 5.4269
+step  9430 | train loss 5.5790
+step  9440 | train loss 5.4581
+step  9450 | train loss 5.5577
+step  9450 | train loss 5.5577 | val loss 5.6181 | gap +0.0604
+step  9460 | train loss 5.5743
+step  9470 | train loss 5.5777
+step  9480 | train loss 5.6716
+step  9490 | train loss 5.3646
+step  9500 | train loss 5.5627
+step  9500 | train loss 5.5627 | val loss 5.6161 | gap +0.0534
+
+Samples at step 9500
+[prompt] 이 영화는
+이 영화는 아니다.
+흐지섭다는 것을 좀 모르겠다 ㅋㅋ...이렇게 너무재밌음
+스토리가 될수있어질 않겠는데... 이런 영화관에서 보니까...이더러워야 한
+
+[prompt] 정말
+정말 재밌음 ㅎㅎ
+이렇게 재미없는 영화네 ㅋㅋㅋ 이런 영화는 좀 재밌었다ㅇ
+캐스팅만 잘 하는데...;;
+이연은 이 영화가 좋아할정도로... 근데 아침도 좋음.
+내가
+
+step  9510 | train loss 5.3160
+step  9520 | train loss 5.4747
+step  9530 | train loss 5.5652
+step  9540 | train loss 5.3303
+step  9550 | train loss 5.5105
+step  9550 | train loss 5.5105 | val loss 5.6143 | gap +0.1038
+step  9560 | train loss 5.5307
+step  9570 | train loss 5.5064
+step  9580 | train loss 5.4582
+step  9590 | train loss 5.3948
+step  9600 | train loss 5.5540
+step  9600 | train loss 5.5540 | val loss 5.6124 | gap +0.0584
+step  9610 | train loss 5.5206
+step  9620 | train loss 5.5363
+step  9630 | train loss 5.4729
+step  9640 | train loss 5.4806
+step  9650 | train loss 5.4335
+step  9650 | train loss 5.4335 | val loss 5.6106 | gap +0.1770
+step  9660 | train loss 5.5335
+step  9670 | train loss 5.5202
+step  9680 | train loss 5.4499
+step  9690 | train loss 5.5119
+
+Samples after epoch 17
+[prompt] 이 영화는
+이 영화는 정말 재밌음
+역시 조진정한 사회를 볼때도가능을 수 없다.
+무조건 봤는데 정말 별로...
+신도 좋음
+감동적을 통하게 잘 어울리는 것은 엄청 좋습니다
+
+
+[prompt] 정말
+정말 재밌음
+공포영화같아요
+최고..정말 재미없지만 그래도 재밌는걸로써요?
+역시 최고였다면, 이리웃기세계가 있습니다. 최고
+나면 후회하지 않다.
+너무
+
+
+Epoch 18/20
+step  9700 | train loss 5.5161
+step  9700 | train loss 5.5161 | val loss 5.6124 | gap +0.0963
+step  9710 | train loss 5.4910
+step  9720 | train loss 5.4585
+step  9730 | train loss 5.3989
+step  9740 | train loss 5.4140
+step  9750 | train loss 5.5168
+step  9750 | train loss 5.5168 | val loss 5.6120 | gap +0.0951
+step  9760 | train loss 5.4088
+step  9770 | train loss 5.5332
+step  9780 | train loss 5.4502
+step  9790 | train loss 5.3972
+step  9800 | train loss 5.4011
+step  9800 | train loss 5.4011 | val loss 5.6107 | gap +0.2096
+step  9810 | train loss 5.4294
+step  9820 | train loss 5.3591
+step  9830 | train loss 5.3177
+step  9840 | train loss 5.5469
+step  9850 | train loss 5.3980
+step  9850 | train loss 5.3980 | val loss 5.6136 | gap +0.2156
+step  9860 | train loss 5.4940
+step  9870 | train loss 5.4597
+step  9880 | train loss 5.3727
+step  9890 | train loss 5.3820
+step  9900 | train loss 5.5126
+step  9900 | train loss 5.5126 | val loss 5.6125 | gap +0.0999
+step  9910 | train loss 5.4281
+step  9920 | train loss 5.5409
+step  9930 | train loss 5.3972
+step  9940 | train loss 5.5507
+step  9950 | train loss 5.3737
+step  9950 | train loss 5.3737 | val loss 5.6082 | gap +0.2345
+step  9960 | train loss 5.4790
+step  9970 | train loss 5.5132
+step  9980 | train loss 5.4152
+step  9990 | train loss 5.5011
+step 10000 | train loss 5.3700
+step 10000 | train loss 5.3700 | val loss 5.6063 | gap +0.2363
+
+Samples at step 10000
+[prompt] 이 영화는
+이 영화는 별로였습니다ㅠㅠ 특히 마지막 장면도 잘했으신과 함께 보고나서 너무 지루했다. 그것이 없다. 다행이트를 한다. 영화임.
+그냥 너무 예쁘고는 너무 좋
+
+[prompt] 정말
+정말 재미없음
+내가 너무 잘하는데..근데 쓰레기가면서 봤다. 그런영화..너무 재밌어요..
+내가 끝까지 봤을까
+큯�었으면 좋았다.
+진짜나도 왜 나왔어요 ㅋㅋ
+왠
+
+step 10010 | train loss 5.4093
+step 10020 | train loss 5.5127
+step 10030 | train loss 5.4925
+step 10040 | train loss 5.5056
+step 10050 | train loss 5.5062
+step 10050 | train loss 5.5062 | val loss 5.6061 | gap +0.1000
+step 10060 | train loss 5.4962
+step 10070 | train loss 5.5586
+step 10080 | train loss 5.5123
+step 10090 | train loss 5.4232
+step 10100 | train loss 5.3071
+step 10100 | train loss 5.3071 | val loss 5.6034 | gap +0.2962
+step 10110 | train loss 5.4154
+step 10120 | train loss 5.4880
+step 10130 | train loss 5.4741
+step 10140 | train loss 5.5252
+step 10150 | train loss 5.4020
+step 10150 | train loss 5.4020 | val loss 5.6030 | gap +0.2010
+step 10160 | train loss 5.4375
+step 10170 | train loss 5.5229
+step 10180 | train loss 5.4011
+step 10190 | train loss 5.5920
+step 10200 | train loss 5.5421
+step 10200 | train loss 5.5421 | val loss 5.5993 | gap +0.0572
+step 10210 | train loss 5.5079
+step 10220 | train loss 5.4787
+step 10230 | train loss 5.4000
+step 10240 | train loss 5.4651
+step 10250 | train loss 5.5212
+step 10250 | train loss 5.5212 | val loss 5.5988 | gap +0.0777
+step 10260 | train loss 5.5271
+
+Samples after epoch 18
+[prompt] 이 영화는
+이 영화는 많이 봤던 영화이트가 아깝다.
+재미없다큐님...이블보다 이것도 많고 지루함. 어렛나는 드라마는 쓰레기에서 망작에 낚여서 봤었다..
+살
+
+[prompt] 정말
+정말재미있음
+그럴듯한 느낌
+여운 작품. 쇼크이 아닌데..아...진짜 이런거라고 하는 것과 영상은 그림.
+제영화...
+내 인생이 좀 허무
+
+
+Epoch 19/20
+step 10270 | train loss 5.3822
+step 10280 | train loss 5.3020
+step 10290 | train loss 5.3810
+step 10300 | train loss 5.4476
+step 10300 | train loss 5.4476 | val loss 5.5986 | gap +0.1510
+step 10310 | train loss 5.3099
+step 10320 | train loss 5.3593
+step 10330 | train loss 5.5234
+step 10340 | train loss 5.3763
+step 10350 | train loss 5.4657
+step 10350 | train loss 5.4657 | val loss 5.6002 | gap +0.1345
+step 10360 | train loss 5.3352
+step 10370 | train loss 5.4102
+step 10380 | train loss 5.5086
+step 10390 | train loss 5.4214
+step 10400 | train loss 5.4174
+step 10400 | train loss 5.4174 | val loss 5.5976 | gap +0.1802
+step 10410 | train loss 5.5031
+step 10420 | train loss 5.4072
+step 10430 | train loss 5.4109
+step 10440 | train loss 5.4996
+step 10450 | train loss 5.3656
+step 10450 | train loss 5.3656 | val loss 5.5961 | gap +0.2305
+step 10460 | train loss 5.4210
+step 10470 | train loss 5.4892
+step 10480 | train loss 5.4919
+step 10490 | train loss 5.2504
+step 10500 | train loss 5.3567
+step 10500 | train loss 5.3567 | val loss 5.5998 | gap +0.2431
+
+Samples at step 10500
+[prompt] 이 영화는
+이 영화는 정말 좋은 영화..
+진짜 재밌어요^^
+내가 본 드라마.뭐냐..그리즐지 모르겠네...어놓았다 이런영화..
+아버리다 ㅋㅋ
+이게 뭐야..
+나왔어요
+
+[prompt] 정말
+정말 잼있었어요
+아직비노성은 그럴 때마다 먹나? 그냥 그냥 시간도 별로..ㅠㅠㅠㅜ
+아름을 보는 사람만 가득했네. 영화라지만 그녀들의
+
+step 10510 | train loss 5.4730
+step 10520 | train loss 5.4719
+step 10530 | train loss 5.3869
+step 10540 | train loss 5.4199
+step 10550 | train loss 5.4302
+step 10550 | train loss 5.4302 | val loss 5.5967 | gap +0.1666
+step 10560 | train loss 5.4360
+step 10570 | train loss 5.4488
+step 10580 | train loss 5.3026
+step 10590 | train loss 5.4898
+step 10600 | train loss 5.4087
+step 10600 | train loss 5.4087 | val loss 5.5968 | gap +0.1881
+step 10610 | train loss 5.4027
+step 10620 | train loss 5.4056
+step 10630 | train loss 5.3677
+step 10640 | train loss 5.4819
+step 10650 | train loss 5.2937
+step 10650 | train loss 5.2937 | val loss 5.5966 | gap +0.3029
+step 10660 | train loss 5.4495
+step 10670 | train loss 5.4013
+step 10680 | train loss 5.3507
+step 10690 | train loss 5.2153
+step 10700 | train loss 5.3770
+step 10700 | train loss 5.3770 | val loss 5.5928 | gap +0.2158
+step 10710 | train loss 5.3966
+step 10720 | train loss 5.4787
+step 10730 | train loss 5.5124
+step 10740 | train loss 5.2994
+step 10750 | train loss 5.3676
+step 10750 | train loss 5.3676 | val loss 5.5925 | gap +0.2249
+step 10760 | train loss 5.4261
+step 10770 | train loss 5.4051
+step 10780 | train loss 5.4580
+step 10790 | train loss 5.4053
+step 10800 | train loss 5.4445
+step 10800 | train loss 5.4445 | val loss 5.5886 | gap +0.1441
+step 10810 | train loss 5.5431
+step 10820 | train loss 5.3877
+step 10830 | train loss 5.5724
+
+Samples after epoch 19
+[prompt] 이 영화는
+이 영화는 가득한다는게 아니라서는것 같은데...왜이 이영화는 진짜 대박!
+이런 드라마였음
+스토리도 좋았습니다. 내가 정말 좋았다!!
+전함, 이건 뭐하나보지마세요
+
+[prompt] 정말
+정말 재밌어요
+12년때는 이정도가 정말 잘하다..1점도 아깝다나와서 10점준다
+195분위.5점도 좋고
+12년만에 이런 영화가 평점이
+
+
+Epoch 20/20
+step 10840 | train loss 5.2456
+step 10850 | train loss 5.2593
+step 10850 | train loss 5.2593 | val loss 5.5865 | gap +0.3272
+step 10860 | train loss 5.3277
+step 10870 | train loss 5.4614
+step 10880 | train loss 5.3730
+step 10890 | train loss 5.4373
+step 10900 | train loss 5.4559
+step 10900 | train loss 5.4559 | val loss 5.5895 | gap +0.1336
+step 10910 | train loss 5.3268
+step 10920 | train loss 5.4192
+step 10930 | train loss 5.3748
+step 10940 | train loss 5.3809
+step 10950 | train loss 5.4143
+step 10950 | train loss 5.4143 | val loss 5.5898 | gap +0.1756
+step 10960 | train loss 5.3681
+step 10970 | train loss 5.2598
+step 10980 | train loss 5.4489
+step 10990 | train loss 5.3851
+step 11000 | train loss 5.3759
+step 11000 | train loss 5.3759 | val loss 5.5876 | gap +0.2117
+
+Samples at step 11000
+[prompt] 이 영화는
+이 영화는 나은 무슨 말았으면 더러운영화라고 10점도없어
+감동적임.
+진짜 너무나름다운받은 좀 어처구 싶네요..뭐.. ㅠ
+재미있네
+영화
+
+[prompt] 정말
+정말 너무 잘만든거지? 그냥 쓰레기 영화관객을 보시길.
+이런영화.
+김원을 담배경찰을 보시길!
+이렇게 좋은영화였습니다.
+뭐지 맥�야
+
+step 11010 | train loss 5.3859
+step 11020 | train loss 5.4249
+step 11030 | train loss 5.5117
+step 11040 | train loss 5.3740
+step 11050 | train loss 5.4774
+step 11050 | train loss 5.4774 | val loss 5.5882 | gap +0.1108
+step 11060 | train loss 5.3461
+step 11070 | train loss 5.1451
+step 11080 | train loss 5.3346
+step 11090 | train loss 5.4004
+step 11100 | train loss 5.2799
+step 11100 | train loss 5.2799 | val loss 5.5919 | gap +0.3119
+step 11110 | train loss 5.4830
+step 11120 | train loss 5.4866
+step 11130 | train loss 5.4597
+step 11140 | train loss 5.4617
+step 11150 | train loss 5.4420
+step 11150 | train loss 5.4420 | val loss 5.5896 | gap +0.1477
+step 11160 | train loss 5.4571
+step 11170 | train loss 5.3796
+step 11180 | train loss 5.4074
+step 11190 | train loss 5.4069
+step 11200 | train loss 5.3530
+step 11200 | train loss 5.3530 | val loss 5.5863 | gap +0.2333
+step 11210 | train loss 5.3870
+step 11220 | train loss 5.5771
+step 11230 | train loss 5.4360
+step 11240 | train loss 5.4036
+step 11250 | train loss 5.4057
+step 11250 | train loss 5.4057 | val loss 5.5854 | gap +0.1797
+step 11260 | train loss 5.3470
+step 11270 | train loss 5.2207
+step 11280 | train loss 5.4771
+step 11290 | train loss 5.3041
+step 11300 | train loss 5.5249
+step 11300 | train loss 5.5249 | val loss 5.5795 | gap +0.0546
+step 11310 | train loss 5.4176
+step 11320 | train loss 5.5667
+step 11330 | train loss 5.3861
+step 11340 | train loss 5.4269
+step 11350 | train loss 5.4625
+step 11350 | train loss 5.4625 | val loss 5.5827 | gap +0.1201
+step 11360 | train loss 5.3851
+step 11370 | train loss 5.3194
+step 11380 | train loss 5.4429
+step 11390 | train loss 5.4349
+step 11400 | train loss 5.4828
+step 11400 | train loss 5.4828 | val loss 5.5774 | gap +0.0947
+
+Samples after epoch 20
+[prompt] 이 영화는
+이 영화는 재밌네요
+영화관에서 본 기억이 난해...이 오랜드라 할것보다 낮네요~!!
+아들이 많은게 만드지모르게 못했다
+재미있었다고 하지 모르겠지만 재밌
+
+[prompt] 정말
+정말 재밌던데...ㅠㅠ
+정말 재미없었으면 진짜 재밌게봤습니다.
+박소설정치겠다. 그리고 기대했는데...진짜... 이건 이건 ㅎㄷㄷㄷㄷㄷ 하지만 영화라는 내용이 너무나와 스토리
+
+Saved loss graph: experiments/outputs/test_04_outputs/pretrain_loss_curve.png
+Saved checkpoint: experiments/outputs/test_04_outputs/pretrain_experiment_last.pt
