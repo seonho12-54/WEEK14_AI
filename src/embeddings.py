@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
-"""토큰 임베딩 + 위치 임베딩 과제 템플릿."""
+"""Token embedding + position embedding."""
 
 import torch
 import torch.nn as nn
 
 
 class InputEmbedding(nn.Module):
-    """
-    token ID를 Transformer 입력 벡터로 바꿉니다.
-
-    구현할 구조:
-    - token embedding: nn.Embedding(vocab_size, emb_dim)
-    - position embedding: nn.Embedding(context_length, emb_dim)
-    - token embedding + position embedding
-    - dropout
-    """
+    """Convert token IDs to Transformer input vectors."""
 
     def __init__(
         self,
@@ -26,17 +18,16 @@ class InputEmbedding(nn.Module):
         super().__init__()
         self.emb_dim = emb_dim
         self.context_length = context_length
-        # TODO: token_embedding, position_embedding, dropout을 정의하세요.
-        raise NotImplementedError("InputEmbedding.__init__을 구현하세요.")
+        self.token_embedding = nn.Embedding(vocab_size, emb_dim)
+        self.position_embedding = nn.Embedding(context_length, emb_dim)
+        self.dropout = nn.Dropout(drop_rate)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """
-        TODO: token embedding과 position embedding을 더한 뒤 dropout을 적용합니다.
+        batch_size, seq_len = x.shape
+        if seq_len > self.context_length:
+            raise ValueError("sequence length exceeds context_length")
 
-        Args:
-            x: (batch_size, seq_len) token IDs
-
-        Returns:
-            (batch_size, seq_len, emb_dim)
-        """
-        raise NotImplementedError("InputEmbedding.forward를 구현하세요.")
+        positions = torch.arange(seq_len, device=x.device).unsqueeze(0).expand(batch_size, seq_len)
+        token_emb = self.token_embedding(x)
+        pos_emb = self.position_embedding(positions)
+        return self.dropout(token_emb + pos_emb)
