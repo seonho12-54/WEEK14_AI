@@ -1,0 +1,9 @@
+{
+  "test_id": "test_05",
+  "checkpoint": "/content/WEEK14_AI/experiments/outputs/test_05_finetune_best.pt",
+  "checkpoint_epoch": 5,
+  "checkpoint_val_acc": 0.783,
+  "test_samples": 5000,
+  "test_loss": 0.44862481141090393,
+  "test_acc": 0.7944
+}
