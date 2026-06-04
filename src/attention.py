@@ -31,7 +31,13 @@ class MultiHeadAttention(nn.Module):
         self.n_heads = n_heads
         self.head_dim = d_model // n_heads
         # TODO: qkv projection, output projection, dropout을 정의하세요.
-        raise NotImplementedError("MultiHeadAttention.__init__을 구현하세요.")
+
+        self.q_proj = nn.Linear(d_model, d_model, bias = qkv_bias)
+        self.k_proj = nn.Linear(d_model, d_model, bias = qkv_bias)
+        self.v_proj = nn.Linear(d_model, d_model, bias = qkv_bias)
+
+        self.out_proj = nn.Linear(d_model, d_model)
+        self.dropout = nn.Dropout(drop_rate)
 
     def forward(
         self,
@@ -39,12 +45,51 @@ class MultiHeadAttention(nn.Module):
         causal_mask: bool = True,
         return_attention_weights: bool = False,
     ) -> torch.Tensor | tuple[torch.Tensor, torch.Tensor]:
+        
+        batch_size, seq_len, d_model = x.shape
+
+        q = self.q_proj(x)
+        k = self.k_proj(x)
+        v = self.v_proj(x)
+
+        q = q.view(batch_size, seq_len, self.n_heads, self.head_dim)
+        k = k.view(batch_size, seq_len, self.n_heads, self.head_dim)
+        v = v.view(batch_size, seq_len, self.n_heads, self.head_dim)
+
+        q = q.transpose(1, 2)
+        k = k.transpose(1, 2)
+        v = v.transpose(1, 2)
+
+        scores = q @ k.transpose(-2, -1)
+        scores = scores / (self.head_dim ** 0.5)
+
+        if causal_mask:
+            mask = torch.triu(
+                torch.ones(seq_len, seq_len, device=x.device, dtype=torch.bool),
+                diagonal=1,
+            )
+            scores = scores.masked_fill(mask, float("-inf"))
+        
+        attn_weights = torch.softmax(scores, dim=-1)
+        attn_weights = self.dropout(attn_weights)
+
+        context = attn_weights @ v
+
+        context = context.transpose(1, 2)
+        context = context.contiguous().view(batch_size, seq_len, d_model)
+
+        out = self.out_proj(context)
+
+        if return_attention_weights:
+            return out, attn_weights
+
+        return out
         """
         TODO: multi-head attention forward를 구현합니다.
-
+        
         Args:
             x: (batch_size, seq_len, d_model)
             causal_mask: True이면 미래 위치를 볼 수 없게 mask 처리
             return_attention_weights: True이면 attention weight도 함께 반환
         """
-        raise NotImplementedError("MultiHeadAttention.forward를 구현하세요.")
+        
