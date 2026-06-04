@@ -1,0 +1,1487 @@
+{
+  "vocab_size": 300,
+  "id_to_token": {
+    "0": {
+      "type": "str",
+      "value": "<pad>"
+    },
+    "1": {
+      "type": "str",
+      "value": "<unk>"
+    },
+    "2": {
+      "type": "str",
+      "value": "<bos>"
+    },
+    "3": {
+      "type": "str",
+      "value": "<eos>"
+    },
+    "4": {
+      "type": "int",
+      "value": 0
+    },
+    "5": {
+      "type": "int",
+      "value": 1
+    },
+    "6": {
+      "type": "int",
+      "value": 2
+    },
+    "7": {
+      "type": "int",
+      "value": 3
+    },
+    "8": {
+      "type": "int",
+      "value": 4
+    },
+    "9": {
+      "type": "int",
+      "value": 5
+    },
+    "10": {
+      "type": "int",
+      "value": 6
+    },
+    "11": {
+      "type": "int",
+      "value": 7
+    },
+    "12": {
+      "type": "int",
+      "value": 8
+    },
+    "13": {
+      "type": "int",
+      "value": 9
+    },
+    "14": {
+      "type": "int",
+      "value": 10
+    },
+    "15": {
+      "type": "int",
+      "value": 11
+    },
+    "16": {
+      "type": "int",
+      "value": 12
+    },
+    "17": {
+      "type": "int",
+      "value": 13
+    },
+    "18": {
+      "type": "int",
+      "value": 14
+    },
+    "19": {
+      "type": "int",
+      "value": 15
+    },
+    "20": {
+      "type": "int",
+      "value": 16
+    },
+    "21": {
+      "type": "int",
+      "value": 17
+    },
+    "22": {
+      "type": "int",
+      "value": 18
+    },
+    "23": {
+      "type": "int",
+      "value": 19
+    },
+    "24": {
+      "type": "int",
+      "value": 20
+    },
+    "25": {
+      "type": "int",
+      "value": 21
+    },
+    "26": {
+      "type": "int",
+      "value": 22
+    },
+    "27": {
+      "type": "int",
+      "value": 23
+    },
+    "28": {
+      "type": "int",
+      "value": 24
+    },
+    "29": {
+      "type": "int",
+      "value": 25
+    },
+    "30": {
+      "type": "int",
+      "value": 26
+    },
+    "31": {
+      "type": "int",
+      "value": 27
+    },
+    "32": {
+      "type": "int",
+      "value": 28
+    },
+    "33": {
+      "type": "int",
+      "value": 29
+    },
+    "34": {
+      "type": "int",
+      "value": 30
+    },
+    "35": {
+      "type": "int",
+      "value": 31
+    },
+    "36": {
+      "type": "int",
+      "value": 32
+    },
+    "37": {
+      "type": "int",
+      "value": 33
+    },
+    "38": {
+      "type": "int",
+      "value": 34
+    },
+    "39": {
+      "type": "int",
+      "value": 35
+    },
+    "40": {
+      "type": "int",
+      "value": 36
+    },
+    "41": {
+      "type": "int",
+      "value": 37
+    },
+    "42": {
+      "type": "int",
+      "value": 38
+    },
+    "43": {
+      "type": "int",
+      "value": 39
+    },
+    "44": {
+      "type": "int",
+      "value": 40
+    },
+    "45": {
+      "type": "int",
+      "value": 41
+    },
+    "46": {
+      "type": "int",
+      "value": 42
+    },
+    "47": {
+      "type": "int",
+      "value": 43
+    },
+    "48": {
+      "type": "int",
+      "value": 44
+    },
+    "49": {
+      "type": "int",
+      "value": 45
+    },
+    "50": {
+      "type": "int",
+      "value": 46
+    },
+    "51": {
+      "type": "int",
+      "value": 47
+    },
+    "52": {
+      "type": "int",
+      "value": 48
+    },
+    "53": {
+      "type": "int",
+      "value": 49
+    },
+    "54": {
+      "type": "int",
+      "value": 50
+    },
+    "55": {
+      "type": "int",
+      "value": 51
+    },
+    "56": {
+      "type": "int",
+      "value": 52
+    },
+    "57": {
+      "type": "int",
+      "value": 53
+    },
+    "58": {
+      "type": "int",
+      "value": 54
+    },
+    "59": {
+      "type": "int",
+      "value": 55
+    },
+    "60": {
+      "type": "int",
+      "value": 56
+    },
+    "61": {
+      "type": "int",
+      "value": 57
+    },
+    "62": {
+      "type": "int",
+      "value": 58
+    },
+    "63": {
+      "type": "int",
+      "value": 59
+    },
+    "64": {
+      "type": "int",
+      "value": 60
+    },
+    "65": {
+      "type": "int",
+      "value": 61
+    },
+    "66": {
+      "type": "int",
+      "value": 62
+    },
+    "67": {
+      "type": "int",
+      "value": 63
+    },
+    "68": {
+      "type": "int",
+      "value": 64
+    },
+    "69": {
+      "type": "int",
+      "value": 65
+    },
+    "70": {
+      "type": "int",
+      "value": 66
+    },
+    "71": {
+      "type": "int",
+      "value": 67
+    },
+    "72": {
+      "type": "int",
+      "value": 68
+    },
+    "73": {
+      "type": "int",
+      "value": 69
+    },
+    "74": {
+      "type": "int",
+      "value": 70
+    },
+    "75": {
+      "type": "int",
+      "value": 71
+    },
+    "76": {
+      "type": "int",
+      "value": 72
+    },
+    "77": {
+      "type": "int",
+      "value": 73
+    },
+    "78": {
+      "type": "int",
+      "value": 74
+    },
+    "79": {
+      "type": "int",
+      "value": 75
+    },
+    "80": {
+      "type": "int",
+      "value": 76
+    },
+    "81": {
+      "type": "int",
+      "value": 77
+    },
+    "82": {
+      "type": "int",
+      "value": 78
+    },
+    "83": {
+      "type": "int",
+      "value": 79
+    },
+    "84": {
+      "type": "int",
+      "value": 80
+    },
+    "85": {
+      "type": "int",
+      "value": 81
+    },
+    "86": {
+      "type": "int",
+      "value": 82
+    },
+    "87": {
+      "type": "int",
+      "value": 83
+    },
+    "88": {
+      "type": "int",
+      "value": 84
+    },
+    "89": {
+      "type": "int",
+      "value": 85
+    },
+    "90": {
+      "type": "int",
+      "value": 86
+    },
+    "91": {
+      "type": "int",
+      "value": 87
+    },
+    "92": {
+      "type": "int",
+      "value": 88
+    },
+    "93": {
+      "type": "int",
+      "value": 89
+    },
+    "94": {
+      "type": "int",
+      "value": 90
+    },
+    "95": {
+      "type": "int",
+      "value": 91
+    },
+    "96": {
+      "type": "int",
+      "value": 92
+    },
+    "97": {
+      "type": "int",
+      "value": 93
+    },
+    "98": {
+      "type": "int",
+      "value": 94
+    },
+    "99": {
+      "type": "int",
+      "value": 95
+    },
+    "100": {
+      "type": "int",
+      "value": 96
+    },
+    "101": {
+      "type": "int",
+      "value": 97
+    },
+    "102": {
+      "type": "int",
+      "value": 98
+    },
+    "103": {
+      "type": "int",
+      "value": 99
+    },
+    "104": {
+      "type": "int",
+      "value": 100
+    },
+    "105": {
+      "type": "int",
+      "value": 101
+    },
+    "106": {
+      "type": "int",
+      "value": 102
+    },
+    "107": {
+      "type": "int",
+      "value": 103
+    },
+    "108": {
+      "type": "int",
+      "value": 104
+    },
+    "109": {
+      "type": "int",
+      "value": 105
+    },
+    "110": {
+      "type": "int",
+      "value": 106
+    },
+    "111": {
+      "type": "int",
+      "value": 107
+    },
+    "112": {
+      "type": "int",
+      "value": 108
+    },
+    "113": {
+      "type": "int",
+      "value": 109
+    },
+    "114": {
+      "type": "int",
+      "value": 110
+    },
+    "115": {
+      "type": "int",
+      "value": 111
+    },
+    "116": {
+      "type": "int",
+      "value": 112
+    },
+    "117": {
+      "type": "int",
+      "value": 113
+    },
+    "118": {
+      "type": "int",
+      "value": 114
+    },
+    "119": {
+      "type": "int",
+      "value": 115
+    },
+    "120": {
+      "type": "int",
+      "value": 116
+    },
+    "121": {
+      "type": "int",
+      "value": 117
+    },
+    "122": {
+      "type": "int",
+      "value": 118
+    },
+    "123": {
+      "type": "int",
+      "value": 119
+    },
+    "124": {
+      "type": "int",
+      "value": 120
+    },
+    "125": {
+      "type": "int",
+      "value": 121
+    },
+    "126": {
+      "type": "int",
+      "value": 122
+    },
+    "127": {
+      "type": "int",
+      "value": 123
+    },
+    "128": {
+      "type": "int",
+      "value": 124
+    },
+    "129": {
+      "type": "int",
+      "value": 125
+    },
+    "130": {
+      "type": "int",
+      "value": 126
+    },
+    "131": {
+      "type": "int",
+      "value": 127
+    },
+    "132": {
+      "type": "int",
+      "value": 128
+    },
+    "133": {
+      "type": "int",
+      "value": 129
+    },
+    "134": {
+      "type": "int",
+      "value": 130
+    },
+    "135": {
+      "type": "int",
+      "value": 131
+    },
+    "136": {
+      "type": "int",
+      "value": 132
+    },
+    "137": {
+      "type": "int",
+      "value": 133
+    },
+    "138": {
+      "type": "int",
+      "value": 134
+    },
+    "139": {
+      "type": "int",
+      "value": 135
+    },
+    "140": {
+      "type": "int",
+      "value": 136
+    },
+    "141": {
+      "type": "int",
+      "value": 137
+    },
+    "142": {
+      "type": "int",
+      "value": 138
+    },
+    "143": {
+      "type": "int",
+      "value": 139
+    },
+    "144": {
+      "type": "int",
+      "value": 140
+    },
+    "145": {
+      "type": "int",
+      "value": 141
+    },
+    "146": {
+      "type": "int",
+      "value": 142
+    },
+    "147": {
+      "type": "int",
+      "value": 143
+    },
+    "148": {
+      "type": "int",
+      "value": 144
+    },
+    "149": {
+      "type": "int",
+      "value": 145
+    },
+    "150": {
+      "type": "int",
+      "value": 146
+    },
+    "151": {
+      "type": "int",
+      "value": 147
+    },
+    "152": {
+      "type": "int",
+      "value": 148
+    },
+    "153": {
+      "type": "int",
+      "value": 149
+    },
+    "154": {
+      "type": "int",
+      "value": 150
+    },
+    "155": {
+      "type": "int",
+      "value": 151
+    },
+    "156": {
+      "type": "int",
+      "value": 152
+    },
+    "157": {
+      "type": "int",
+      "value": 153
+    },
+    "158": {
+      "type": "int",
+      "value": 154
+    },
+    "159": {
+      "type": "int",
+      "value": 155
+    },
+    "160": {
+      "type": "int",
+      "value": 156
+    },
+    "161": {
+      "type": "int",
+      "value": 157
+    },
+    "162": {
+      "type": "int",
+      "value": 158
+    },
+    "163": {
+      "type": "int",
+      "value": 159
+    },
+    "164": {
+      "type": "int",
+      "value": 160
+    },
+    "165": {
+      "type": "int",
+      "value": 161
+    },
+    "166": {
+      "type": "int",
+      "value": 162
+    },
+    "167": {
+      "type": "int",
+      "value": 163
+    },
+    "168": {
+      "type": "int",
+      "value": 164
+    },
+    "169": {
+      "type": "int",
+      "value": 165
+    },
+    "170": {
+      "type": "int",
+      "value": 166
+    },
+    "171": {
+      "type": "int",
+      "value": 167
+    },
+    "172": {
+      "type": "int",
+      "value": 168
+    },
+    "173": {
+      "type": "int",
+      "value": 169
+    },
+    "174": {
+      "type": "int",
+      "value": 170
+    },
+    "175": {
+      "type": "int",
+      "value": 171
+    },
+    "176": {
+      "type": "int",
+      "value": 172
+    },
+    "177": {
+      "type": "int",
+      "value": 173
+    },
+    "178": {
+      "type": "int",
+      "value": 174
+    },
+    "179": {
+      "type": "int",
+      "value": 175
+    },
+    "180": {
+      "type": "int",
+      "value": 176
+    },
+    "181": {
+      "type": "int",
+      "value": 177
+    },
+    "182": {
+      "type": "int",
+      "value": 178
+    },
+    "183": {
+      "type": "int",
+      "value": 179
+    },
+    "184": {
+      "type": "int",
+      "value": 180
+    },
+    "185": {
+      "type": "int",
+      "value": 181
+    },
+    "186": {
+      "type": "int",
+      "value": 182
+    },
+    "187": {
+      "type": "int",
+      "value": 183
+    },
+    "188": {
+      "type": "int",
+      "value": 184
+    },
+    "189": {
+      "type": "int",
+      "value": 185
+    },
+    "190": {
+      "type": "int",
+      "value": 186
+    },
+    "191": {
+      "type": "int",
+      "value": 187
+    },
+    "192": {
+      "type": "int",
+      "value": 188
+    },
+    "193": {
+      "type": "int",
+      "value": 189
+    },
+    "194": {
+      "type": "int",
+      "value": 190
+    },
+    "195": {
+      "type": "int",
+      "value": 191
+    },
+    "196": {
+      "type": "int",
+      "value": 192
+    },
+    "197": {
+      "type": "int",
+      "value": 193
+    },
+    "198": {
+      "type": "int",
+      "value": 194
+    },
+    "199": {
+      "type": "int",
+      "value": 195
+    },
+    "200": {
+      "type": "int",
+      "value": 196
+    },
+    "201": {
+      "type": "int",
+      "value": 197
+    },
+    "202": {
+      "type": "int",
+      "value": 198
+    },
+    "203": {
+      "type": "int",
+      "value": 199
+    },
+    "204": {
+      "type": "int",
+      "value": 200
+    },
+    "205": {
+      "type": "int",
+      "value": 201
+    },
+    "206": {
+      "type": "int",
+      "value": 202
+    },
+    "207": {
+      "type": "int",
+      "value": 203
+    },
+    "208": {
+      "type": "int",
+      "value": 204
+    },
+    "209": {
+      "type": "int",
+      "value": 205
+    },
+    "210": {
+      "type": "int",
+      "value": 206
+    },
+    "211": {
+      "type": "int",
+      "value": 207
+    },
+    "212": {
+      "type": "int",
+      "value": 208
+    },
+    "213": {
+      "type": "int",
+      "value": 209
+    },
+    "214": {
+      "type": "int",
+      "value": 210
+    },
+    "215": {
+      "type": "int",
+      "value": 211
+    },
+    "216": {
+      "type": "int",
+      "value": 212
+    },
+    "217": {
+      "type": "int",
+      "value": 213
+    },
+    "218": {
+      "type": "int",
+      "value": 214
+    },
+    "219": {
+      "type": "int",
+      "value": 215
+    },
+    "220": {
+      "type": "int",
+      "value": 216
+    },
+    "221": {
+      "type": "int",
+      "value": 217
+    },
+    "222": {
+      "type": "int",
+      "value": 218
+    },
+    "223": {
+      "type": "int",
+      "value": 219
+    },
+    "224": {
+      "type": "int",
+      "value": 220
+    },
+    "225": {
+      "type": "int",
+      "value": 221
+    },
+    "226": {
+      "type": "int",
+      "value": 222
+    },
+    "227": {
+      "type": "int",
+      "value": 223
+    },
+    "228": {
+      "type": "int",
+      "value": 224
+    },
+    "229": {
+      "type": "int",
+      "value": 225
+    },
+    "230": {
+      "type": "int",
+      "value": 226
+    },
+    "231": {
+      "type": "int",
+      "value": 227
+    },
+    "232": {
+      "type": "int",
+      "value": 228
+    },
+    "233": {
+      "type": "int",
+      "value": 229
+    },
+    "234": {
+      "type": "int",
+      "value": 230
+    },
+    "235": {
+      "type": "int",
+      "value": 231
+    },
+    "236": {
+      "type": "int",
+      "value": 232
+    },
+    "237": {
+      "type": "int",
+      "value": 233
+    },
+    "238": {
+      "type": "int",
+      "value": 234
+    },
+    "239": {
+      "type": "int",
+      "value": 235
+    },
+    "240": {
+      "type": "int",
+      "value": 236
+    },
+    "241": {
+      "type": "int",
+      "value": 237
+    },
+    "242": {
+      "type": "int",
+      "value": 238
+    },
+    "243": {
+      "type": "int",
+      "value": 239
+    },
+    "244": {
+      "type": "int",
+      "value": 240
+    },
+    "245": {
+      "type": "int",
+      "value": 241
+    },
+    "246": {
+      "type": "int",
+      "value": 242
+    },
+    "247": {
+      "type": "int",
+      "value": 243
+    },
+    "248": {
+      "type": "int",
+      "value": 244
+    },
+    "249": {
+      "type": "int",
+      "value": 245
+    },
+    "250": {
+      "type": "int",
+      "value": 246
+    },
+    "251": {
+      "type": "int",
+      "value": 247
+    },
+    "252": {
+      "type": "int",
+      "value": 248
+    },
+    "253": {
+      "type": "int",
+      "value": 249
+    },
+    "254": {
+      "type": "int",
+      "value": 250
+    },
+    "255": {
+      "type": "int",
+      "value": 251
+    },
+    "256": {
+      "type": "int",
+      "value": 252
+    },
+    "257": {
+      "type": "int",
+      "value": 253
+    },
+    "258": {
+      "type": "int",
+      "value": 254
+    },
+    "259": {
+      "type": "int",
+      "value": 255
+    },
+    "260": {
+      "type": "tuple",
+      "value": [
+        36,
+        240
+      ]
+    },
+    "261": {
+      "type": "tuple",
+      "value": [
+        36,
+        239
+      ]
+    },
+    "262": {
+      "type": "tuple",
+      "value": [
+        240,
+        161
+      ]
+    },
+    "263": {
+      "type": "tuple",
+      "value": [
+        241,
+        153
+      ]
+    },
+    "264": {
+      "type": "tuple",
+      "value": [
+        239,
+        143
+      ]
+    },
+    "265": {
+      "type": "tuple",
+      "value": [
+        262,
+        184
+      ]
+    },
+    "266": {
+      "type": "tuple",
+      "value": [
+        36,
+        238
+      ]
+    },
+    "267": {
+      "type": "tuple",
+      "value": [
+        239,
+        142
+      ]
+    },
+    "268": {
+      "type": "tuple",
+      "value": [
+        267,
+        152
+      ]
+    },
+    "269": {
+      "type": "tuple",
+      "value": [
+        240,
+        171
+      ]
+    },
+    "270": {
+      "type": "tuple",
+      "value": [
+        264,
+        168
+      ]
+    },
+    "271": {
+      "type": "tuple",
+      "value": [
+        50,
+        50
+      ]
+    },
+    "272": {
+      "type": "tuple",
+      "value": [
+        240,
+        162
+      ]
+    },
+    "273": {
+      "type": "tuple",
+      "value": [
+        240,
+        155
+      ]
+    },
+    "274": {
+      "type": "tuple",
+      "value": [
+        239,
+        171
+      ]
+    },
+    "275": {
+      "type": "tuple",
+      "value": [
+        231,
+        137
+      ]
+    },
+    "276": {
+      "type": "tuple",
+      "value": [
+        238,
+        183
+      ]
+    },
+    "277": {
+      "type": "tuple",
+      "value": [
+        240,
+        164
+      ]
+    },
+    "278": {
+      "type": "tuple",
+      "value": [
+        239,
+        147
+      ]
+    },
+    "279": {
+      "type": "tuple",
+      "value": [
+        238,
+        180
+      ]
+    },
+    "280": {
+      "type": "tuple",
+      "value": [
+        263,
+        156
+      ]
+    },
+    "281": {
+      "type": "tuple",
+      "value": [
+        240,
+        153
+      ]
+    },
+    "282": {
+      "type": "tuple",
+      "value": [
+        269,
+        132
+      ]
+    },
+    "283": {
+      "type": "tuple",
+      "value": [
+        240,
+        158
+      ]
+    },
+    "284": {
+      "type": "tuple",
+      "value": [
+        276,
+        164
+      ]
+    },
+    "285": {
+      "type": "tuple",
+      "value": [
+        156,
+        133
+      ]
+    },
+    "286": {
+      "type": "tuple",
+      "value": [
+        157,
+        152
+      ]
+    },
+    "287": {
+      "type": "tuple",
+      "value": [
+        36,
+        241
+      ]
+    },
+    "288": {
+      "type": "tuple",
+      "value": [
+        239,
+        151
+      ]
+    },
+    "289": {
+      "type": "tuple",
+      "value": [
+        241,
+        286
+      ]
+    },
+    "290": {
+      "type": "tuple",
+      "value": [
+        285,
+        289
+      ]
+    },
+    "291": {
+      "type": "tuple",
+      "value": [
+        260,
+        153
+      ]
+    },
+    "292": {
+      "type": "tuple",
+      "value": [
+        238,
+        182
+      ]
+    },
+    "293": {
+      "type": "tuple",
+      "value": [
+        238,
+        188
+      ]
+    },
+    "294": {
+      "type": "tuple",
+      "value": [
+        275,
+        143
+      ]
+    },
+    "295": {
+      "type": "tuple",
+      "value": [
+        260,
+        155
+      ]
+    },
+    "296": {
+      "type": "tuple",
+      "value": [
+        278,
+        136
+      ]
+    },
+    "297": {
+      "type": "tuple",
+      "value": [
+        240,
+        154
+      ]
+    },
+    "298": {
+      "type": "tuple",
+      "value": [
+        239,
+        170
+      ]
+    },
+    "299": {
+      "type": "tuple",
+      "value": [
+        239,
+        134
+      ]
+    }
+  },
+  "merges": [
+    [
+      36,
+      240
+    ],
+    [
+      36,
+      239
+    ],
+    [
+      240,
+      161
+    ],
+    [
+      241,
+      153
+    ],
+    [
+      239,
+      143
+    ],
+    [
+      262,
+      184
+    ],
+    [
+      36,
+      238
+    ],
+    [
+      239,
+      142
+    ],
+    [
+      267,
+      152
+    ],
+    [
+      240,
+      171
+    ],
+    [
+      264,
+      168
+    ],
+    [
+      50,
+      50
+    ],
+    [
+      240,
+      162
+    ],
+    [
+      240,
+      155
+    ],
+    [
+      239,
+      171
+    ],
+    [
+      231,
+      137
+    ],
+    [
+      238,
+      183
+    ],
+    [
+      240,
+      164
+    ],
+    [
+      239,
+      147
+    ],
+    [
+      238,
+      180
+    ],
+    [
+      263,
+      156
+    ],
+    [
+      240,
+      153
+    ],
+    [
+      269,
+      132
+    ],
+    [
+      240,
+      158
+    ],
+    [
+      276,
+      164
+    ],
+    [
+      156,
+      133
+    ],
+    [
+      157,
+      152
+    ],
+    [
+      36,
+      241
+    ],
+    [
+      239,
+      151
+    ],
+    [
+      241,
+      286
+    ],
+    [
+      285,
+      289
+    ],
+    [
+      260,
+      153
+    ],
+    [
+      238,
+      182
+    ],
+    [
+      238,
+      188
+    ],
+    [
+      275,
+      143
+    ],
+    [
+      260,
+      155
+    ],
+    [
+      278,
+      136
+    ],
+    [
+      240,
+      154
+    ],
+    [
+      239,
+      170
+    ],
+    [
+      239,
+      134
+    ]
+  ]
+}
